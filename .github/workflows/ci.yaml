@@ -10,7 +10,7 @@ on:
 jobs:
   lint:
     name: Lint
-    uses: canonical/data-platform-workflows/.github/workflows/lint.yaml@test-runners-2
+    uses: canonical/data-platform-workflows/.github/workflows/lint.yaml@v13.2.0
 
   unit-test:
     name: Unit test charm
@@ -30,7 +30,7 @@ jobs:
 
   build:
     name: Build charm
-    uses: canonical/data-platform-workflows/.github/workflows/build_charm.yaml@test-runners-2
+    uses: canonical/data-platform-workflows/.github/workflows/build_charm.yaml@v13.2.0
     with:
       cache: true
 
