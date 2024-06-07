@@ -29,7 +29,7 @@ jobs:
       cloud: lxd
       juju-agent-version: 3.1.8
       _beta_allure_report: true
-      _default-runner: '["self-hosted", "linux", "X64", "large", "jammy"]'
+      _default-runner: '["self-hosted", "linux", "ARM64", "large", "jammy"]'
     secrets:
       integration-test: |
         {
