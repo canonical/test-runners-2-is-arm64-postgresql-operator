@@ -1,0 +1,78 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:00:04Z
+
+App         Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+postgresql  14.11    waiting      3  postgresql             0  no       awaiting for cluster to start
+
+Unit           Workload  Agent      Machine  Public address  Ports     Message
+postgresql/0   waiting   idle       0        10.232.54.105   5432/tcp  awaiting for cluster to start
+postgresql/1   waiting   executing  1        10.232.54.234   5432/tcp  awaiting for cluster to start
+postgresql/2*  waiting   executing  2        10.232.54.11    5432/tcp  awaiting for member to start
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.232.54.105  juju-df49cb-0  ubuntu@22.04      Running
+1        started  10.232.54.234  juju-df49cb-1  ubuntu@22.04      Running
+2        started  10.232.54.11   juju-df49cb-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 01:51:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:51:52 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 01:51:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:51:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:51:52 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 01:51:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:51:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:51:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:51:52 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-2: 01:51:52 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 01:51:52 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 01:51:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 01:59:19 ERROR unit.postgresql/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1645, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 544, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 520, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 506, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 861, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 941, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1037, in _on_start
+    self.unit.set_workload_version(self._patroni.get_postgresql_version())
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/src/cluster.py", line 183, in get_postgresql_version
+    for snp in client.get_installed_snaps():
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 808, in get_installed_snaps
+    return self._request("GET", "snaps")
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 769, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 790, in _request_raw
+    response = self.opener.open(request, timeout=self.timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 706, in http_open
+    return self.do_open(_UnixSocketConnection, req, socket_path=self.socket_path)
+  File "/usr/lib/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+unit-postgresql-1: 01:59:20 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

@@ -1,0 +1,43 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:16:50Z
+
+App                       Version  Status       Scale  Charm                     Channel      Rev  Exposed  Message
+postgresql                14.11    maintenance      3  postgresql                               0  no       Beginning rolling restart
+self-signed-certificates           active           1  self-signed-certificates  latest/edge  146  no       
+
+Unit                         Workload     Agent      Machine  Public address  Ports     Message
+postgresql/0                 waiting      executing  0        10.218.132.215  5432/tcp  awaiting for cluster to start
+postgresql/1                 waiting      executing  1        10.218.132.148  5432/tcp  awaiting for cluster to start
+postgresql/2*                maintenance  executing  2        10.218.132.19   5432/tcp  Executing restart operation
+self-signed-certificates/0*  active       idle       3        10.218.132.228            
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.218.132.215  juju-93b898-0  ubuntu@22.04      Running
+1        started  10.218.132.148  juju-93b898-1  ubuntu@22.04      Running
+2        started  10.218.132.19   juju-93b898-2  ubuntu@22.04      Running
+3        started  10.218.132.228  juju-93b898-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 02:02:11 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:02:11 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:02:11 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:02:11 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:02:11 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 02:02:11 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:02:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-self-signed-certificates-0: 02:02:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:02:23 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:02:23 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 02:02:23 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:02:24 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:03:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:03:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:03:04 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-1: 02:03:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 02:07:34 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: local error: tls: bad record MAC: use of closed network connection
+unit-postgresql-1: 02:07:35 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: use of closed network connection
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
