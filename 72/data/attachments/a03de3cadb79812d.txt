@@ -1,0 +1,27 @@
+[32mINFO    [0m integration.test_backups:test_backups.py:84 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  07:42:42Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws                     waiting    0/2  postgresql                                 0  no       waiting for machine
+s3-integrator                      waiting    0/1  s3-integrator             latest/stable   18  no       waiting for machine
+self-signed-certificates           waiting    0/1  self-signed-certificates  latest/edge    146  no       waiting for machine
+
+Unit                        Workload  Agent       Machine  Public address  Ports  Message
+postgresql-aws/0            waiting   allocating  2                               waiting for machine
+postgresql-aws/1            waiting   allocating  3                               waiting for machine
+s3-integrator/0             waiting   allocating  0        10.138.12.98           waiting for machine
+self-signed-certificates/0  waiting   allocating  1        10.138.12.212          waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        pending  10.138.12.98   juju-0be9e3-0  ubuntu@22.04      Running
+1        pending  10.138.12.212  juju-0be9e3-1  ubuntu@22.04      Running
+2        down                    pending        ubuntu@22.04      failed to start machine 2 (write tcp 10.138.12.106:37170->10.138.12.1:8443: i/o timeout), retrying in 10s (10 more at...
+3        down                    pending        ubuntu@22.04      failed to start machine 3 (write tcp 10.138.12.106:37170->10.138.12.1:8443: i/o timeout), retrying in 10s (10 more at...
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

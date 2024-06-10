@@ -1,0 +1,98 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:84 Destroying second model
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+  postgresql/1 [idle] waiting: awaiting passwords generation
+  postgresql/2 [idle] waiting: awaiting passwords generation
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  07:58:12Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Exposed  Message
+postgresql                    waiting      3  postgresql                            0  no       awaiting passwords generation
+postgresql-test-app           active       1  postgresql-test-app  latest/stable  145  no       
+
+Unit                    Workload  Agent      Machine  Public address  Ports  Message
+postgresql-test-app/0*  active    idle       3        10.137.24.165          
+postgresql/0            waiting   idle       0        10.137.24.134          awaiting passwords generation
+postgresql/1            waiting   idle       1        10.137.24.248          awaiting passwords generation
+postgresql/2*           waiting   executing  2        10.137.24.108          (leader-elected) waiting to start PostgreSQL
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.137.24.134  juju-395c20-0  ubuntu@22.04      Running
+1        started  10.137.24.248  juju-395c20-1  ubuntu@22.04      Running
+2        started  10.137.24.108  juju-395c20-2  ubuntu@22.04      Running
+3        started  10.137.24.165  juju-395c20-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 07:49:08 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 07:49:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 07:49:08 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 07:49:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 07:49:08 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 07:49:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 07:49:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 07:49:08 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 07:49:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 07:49:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 07:49:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 07:49:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 07:49:47 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 07:49:47 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 07:49:47 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 07:49:47 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 07:57:39 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1645, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 544, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 520, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 509, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 143, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 352, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 851, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 941, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 877, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1522, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 556, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 183, in get_postgresql_version
+    for snp in client.get_installed_snaps():
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 808, in get_installed_snaps
+    return self._request("GET", "snaps")
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 769, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 790, in _request_raw
+    response = self.opener.open(request, timeout=self.timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 706, in http_open
+    return self.do_open(_UnixSocketConnection, req, socket_path=self.socket_path)
+  File "/usr/lib/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+unit-postgresql-2: 07:57:46 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
