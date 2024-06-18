@@ -1,0 +1,43 @@
+[32mINFO    [0m integration.test_backups:test_backups.py:84 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:32:48Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws                     waiting      2  postgresql                                 0  no       waiting to start PostgreSQL
+s3-integrator                      active       1  s3-integrator             latest/stable   18  no       
+self-signed-certificates           active       1  self-signed-certificates  latest/edge    148  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports  Message
+postgresql-aws/0*            waiting   executing  2        10.19.248.205          waiting to start PostgreSQL
+postgresql-aws/1             waiting   idle       3        10.19.248.86           awaiting passwords generation
+s3-integrator/0*             active    idle       0        10.19.248.44           
+self-signed-certificates/0*  active    idle       1        10.19.248.126          
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.19.248.44   juju-235ef1-0  ubuntu@22.04      Running
+1        started  10.19.248.126  juju-235ef1-1  ubuntu@22.04      Running
+2        started  10.19.248.205  juju-235ef1-2  ubuntu@22.04      Running
+3        started  10.19.248.86   juju-235ef1-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:23:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:23:36 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 02:23:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 02:23:38 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:23:38 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:23:38 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:23:38 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-s3-integrator-0: 02:23:39 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-0: 02:23:58 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:23:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:23:59 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:23:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:23:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:23:59 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 02:23:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 02:23:59 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
