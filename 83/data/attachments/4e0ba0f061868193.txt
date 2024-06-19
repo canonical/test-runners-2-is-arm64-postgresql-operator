@@ -1,0 +1,84 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  03:29:14Z
+
+App             Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+first-cluster   14.11    error        3  postgresql             0  no       hook failed: "database-peers-relation-changed"
+second-cluster           waiting      1  postgresql             1  no       waiting to start PostgreSQL
+
+Unit               Workload  Agent      Machine  Public address  Ports     Message
+first-cluster/0*   active    executing  0        10.45.115.56    5432/tcp  Primary
+first-cluster/1    waiting   executing  1        10.45.115.166   5432/tcp  awaiting for cluster to start
+first-cluster/2    error     idle       2        10.45.115.159             hook failed: "database-peers-relation-changed"
+second-cluster/0*  waiting   executing  3        10.45.115.207             waiting to start PostgreSQL
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.45.115.56   juju-9422fc-0  ubuntu@22.04      Running
+1        started  10.45.115.166  juju-9422fc-1  ubuntu@22.04      Running
+2        started  10.45.115.159  juju-9422fc-2  ubuntu@22.04      Running
+3        started  10.45.115.207  juju-9422fc-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 03:22:13 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 03:22:13 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:22:13 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-first-cluster-0: 03:22:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:22:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:22:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:22:16 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-first-cluster-1: 03:22:16 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 03:22:17 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:22:17 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:22:17 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-first-cluster-2: 03:22:18 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:22:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:22:27 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 03:22:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-second-cluster-0: 03:22:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-first-cluster-2: 03:24:41 ERROR unit.first-cluster/2.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="114"'] failed with output = ''
+unit-second-cluster-0: 03:24:48 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-first-cluster-0: 03:27:40 ERROR unit.first-cluster/0.juju-log upgrade:0: Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-first-cluster-2: 03:28:40 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.45.115.159:38208->10.45.115.162:17070: i/o timeout: write tcp 10.45.115.159:38208->10.45.115.162:17070: i/o timeout
+unit-first-cluster-2: 03:29:10 ERROR unit.first-cluster/2.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/./src/charm.py", line 1645, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/ops/main.py", line 544, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/ops/main.py", line 520, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/ops/main.py", line 506, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/ops/framework.py", line 861, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/ops/framework.py", line 941, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/./src/charm.py", line 905, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/./src/charm.py", line 1581, in _validate_config_options
+    self.config.instance_default_text_search_config
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/lib/charms/data_platform_libs/v0/data_models.py", line 200, in config
+    return self.config_type(**translated_keys)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/pydantic/main.py", line 339, in __init__
+    values, fields_set, validation_error = validate_model(__pydantic_self__.__class__, data)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/pydantic/main.py", line 1074, in validate_model
+    v_, errors_ = field.validate(value, values, loc=field.alias, cls=cls_)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/pydantic/fields.py", line 895, in validate
+    v, errors = self._apply_validators(v, values, loc, cls, self.post_validators)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/pydantic/fields.py", line 1154, in _apply_validators
+    v = validator(cls, v, values, self, self.model_config)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/venv/pydantic/class_validators.py", line 304, in <lambda>
+    return lambda cls, v, values, field, config: validator(cls, v)
+  File "/var/lib/juju/agents/unit-first-cluster-2/charm/src/config.py", line 246, in response_lc_values
+    output = subprocess.check_output(["ls", "/snap/charmed-postgresql/current/usr/lib/locale"])
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ls', '/snap/charmed-postgresql/current/usr/lib/locale']' returned non-zero exit status 2.
+unit-first-cluster-2: 03:29:12 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
