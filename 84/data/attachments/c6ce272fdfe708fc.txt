@@ -1,0 +1,118 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:jammy/postgresql-0
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2958 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for member to start
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:45:23Z
+
+App         Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+postgresql  14.11    waiting      1  postgresql             0  no       awaiting for member to start
+
+Unit           Workload  Agent      Machine  Public address  Ports     Message
+postgresql/0*  waiting   executing  0        10.119.196.133  5432/tcp  awaiting for member to start
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.119.196.133  juju-9e2843-0  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:33:14 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 02:33:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:33:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:33:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

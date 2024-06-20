@@ -1,0 +1,8 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/s3-integrator-18
+[32mINFO    [0m juju.model:model.py:2098 Deploying ch:arm64/jammy/self-signed-certificates-150
+[32mINFO    [0m juju.model:model.py:2098 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1564 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m juju.model:model.py:1564 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.test_backups:test_backups.py:124 configuring S3 integrator for AWS
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
