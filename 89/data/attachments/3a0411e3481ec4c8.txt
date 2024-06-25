@@ -1,0 +1,108 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  01:48:20Z
+
+App                  Version  Status       Scale  Charm                Channel  Rev  Exposed  Message
+postgresql           14.11    maintenance      3  postgresql                      0  no       reconfiguring cluster
+postgresql-test-app           active           1  postgresql-test-app  edge     159  no       
+
+Unit                    Workload     Agent      Machine  Public address  Ports     Message
+postgresql-test-app/0*  active       idle       3        10.113.100.221            
+postgresql/0            waiting      idle       0        10.113.100.27   5432/tcp  awaiting for cluster to start
+postgresql/1*           maintenance  executing  1        10.113.100.2    5432/tcp  reconfiguring cluster
+postgresql/2            waiting      idle       2        10.113.100.3    5432/tcp  awaiting for cluster to start
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.113.100.27   juju-6fd0c1-0  ubuntu@22.04      Running
+1        started  10.113.100.2    juju-6fd0c1-1  ubuntu@22.04      Running
+2        started  10.113.100.3    juju-6fd0c1-2  ubuntu@22.04      Running
+3        started  10.113.100.221  juju-6fd0c1-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 01:38:03 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 01:38:03 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:38:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 01:38:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 01:38:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 01:38:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:38:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:38:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:38:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:38:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-test-app-0: 01:38:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 01:38:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:38:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:38:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-0: 01:38:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 01:38:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 01:45:29 ERROR unit.postgresql/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1645, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 544, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 520, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 509, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 143, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 352, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 851, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 941, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 877, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1522, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/src/cluster.py", line 556, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/src/cluster.py", line 183, in get_postgresql_version
+    for snp in client.get_installed_snaps():
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 808, in get_installed_snaps
+    return self._request("GET", "snaps")
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 769, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 790, in _request_raw
+    response = self.opener.open(request, timeout=self.timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/operator_libs_linux/v2/snap.py", line 706, in http_open
+    return self.do_open(_UnixSocketConnection, req, socket_path=self.socket_path)
+  File "/usr/lib/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+unit-postgresql-1: 01:45:36 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-0: 01:45:45 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff94a93be0 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:45:54 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffb7f63c10 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:00 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff90943c40 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:05 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffbaedfb50 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:10 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff94b1fc40 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:15 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffb1d93b50 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:20 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff7fca3bb0 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:25 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff94843b50 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:30 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffa55a3be0 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:42 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff9c293c10 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:46:47 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffa485fc70 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:47:14 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffffbb1d3f40 state=finished raised ConnectionError>]
+unit-postgresql-0: 01:47:21 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xffff8efefb50 state=finished raised ConnectionError>]
+unit-postgresql-1: 01:48:02 ERROR unit.postgresql/1.juju-log database-peers:2: Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
