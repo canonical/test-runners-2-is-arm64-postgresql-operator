@@ -5,7 +5,7 @@ type: charm
 bases:
   - name: ubuntu
     channel: "22.04"
-    architectures: [amd64]
+    architectures: [arm64]
 parts:
   charm:
     override-pull: |
