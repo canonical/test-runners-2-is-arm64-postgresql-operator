@@ -1,0 +1,28 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  01:58:19Z
+
+App                  Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql-test-app  14.11    active      1  postgresql             0  no       
+
+Unit                    Workload  Agent      Machine  Public address  Ports     Message
+postgresql-test-app/1*  active    executing  1        10.213.130.9    5432/tcp  (get-password) Primary
+
+Machine  State    Address       Inst id        Base          AZ  Message
+1        started  10.213.130.9  juju-a26fc3-1  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 01:48:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:48:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:48:07 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-test-app-0: 01:48:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:52:22 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 01:52:23 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:52:23 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 01:52:23 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app-1: 01:57:17 ERROR unit.postgresql-test-app/1.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

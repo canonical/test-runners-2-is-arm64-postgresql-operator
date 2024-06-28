@@ -1,0 +1,24 @@
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/0 [idle] active: 
+  pg/1 [idle] active: 
+  pg/2 [idle] active: Primary
+  pg/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/3 [executing] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/3 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/0 [executing] active: 
+  pg/1 [executing] active: 
+  pg/2 [executing] maintenance: reconfiguring cluster
+  pg/3 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/2 [executing] maintenance: reconfiguring cluster
+  pg/3 [executing] waiting: waiting to start PostgreSQL
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting

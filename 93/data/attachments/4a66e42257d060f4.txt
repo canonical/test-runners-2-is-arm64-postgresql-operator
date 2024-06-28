@@ -1,0 +1,63 @@
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:27:42Z
+
+App               Version  Status       Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           maintenance      4  landscape-client  latest/edge   69  no       Installing landscape client..
+pg                14.11    active           4  postgresql                       0  no       
+ubuntu-advantage           maintenance      4  ubuntu-advantage  latest/edge   82  no       installing charm software
+
+Unit                   Workload     Agent      Machine  Public address  Ports     Message
+pg/0                   active       executing  0        10.98.59.133    5432/tcp  
+  landscape-client/2   active       idle                10.98.59.133              Client registered!
+  ubuntu-advantage/1   active       idle                10.98.59.133              Attached (esm-apps,esm-infra)
+pg/1                   active       idle       1        10.98.59.150    5432/tcp  
+  landscape-client/1   active       idle                10.98.59.150              Client registered!
+  ubuntu-advantage/2   active       idle                10.98.59.150              Attached (esm-apps,esm-infra)
+pg/2*                  active       executing  2        10.98.59.103    5432/tcp  Primary
+  landscape-client/0*  active       idle                10.98.59.103              Client registered!
+  ubuntu-advantage/0*  active       idle                10.98.59.103              Attached (esm-apps,esm-infra)
+pg/3                   waiting      executing  3        10.98.59.252              (start) waiting to start PostgreSQL
+  landscape-client/3   maintenance  executing           10.98.59.252              Installing landscape client..
+  ubuntu-advantage/3   maintenance  executing           10.98.59.252              installing charm software
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.98.59.133  juju-aaa7ee-0  ubuntu@22.04      Running
+1        started  10.98.59.150  juju-aaa7ee-1  ubuntu@22.04      Running
+2        started  10.98.59.103  juju-aaa7ee-2  ubuntu@22.04      Running
+3        started  10.98.59.252  juju-aaa7ee-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 02:10:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:10:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:10:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 02:10:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:10:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:10:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:10:14 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-pg-1: 02:10:15 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:10:31 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:10:31 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:10:31 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-pg-0: 02:10:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 02:21:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 02:21:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 02:21:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 02:21:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 02:21:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 02:21:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:25:13 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:25:13 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 02:25:13 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-3: 02:25:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-3: 02:26:12 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 127
+unit-ubuntu-advantage-3: 02:26:12 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 127
+unit-ubuntu-advantage-2: 02:26:44 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-landscape-client-1: 02:26:53 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-landscape-client-2: 02:26:54 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
