@@ -1,0 +1,58 @@
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.relations.test_relations:test_relations.py:120  remove relation with legacy endpoints
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  db-app/0 [idle] active: 
+  database-app/0 [idle] active: 
+  postgresql/0 [executing] blocked: Please choose one endpoint to use. No need to relate all of them simultaneously!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: Primary
+[32mINFO    [0m integration.relations.test_relations:test_relations.py:130 check connect to = dbname='database_app_first_database' user='relation-8' host='10.131.124.82' password='UiEICNHgASAq7ZQU' connect_timeout=10
+[32mINFO    [0m integration.relations.test_relations:test_relations.py:136 remove relation database-app:first-database
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] active: Primary
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:06:33Z
+
+App           Version  Status  Scale  Charm                Channel  Rev  Exposed  Message
+database-app           active      1  postgresql-test-app  edge     171  no       received database credentials of the first database
+db-app                 active      1  postgresql-test-app  edge     171  no       
+postgresql    14.11    active      1  postgresql                      0  no       
+
+Unit             Workload  Agent  Machine  Public address  Ports     Message
+database-app/0*  active    idle   1        10.131.124.88             received database credentials of the first database
+db-app/0*        active    idle   0        10.131.124.3              
+postgresql/0*    active    idle   2        10.131.124.82   5432/tcp  Primary
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.131.124.3   juju-990a73-0  ubuntu@22.04      Running
+1        started  10.131.124.88  juju-990a73-1  ubuntu@22.04      Running
+2        started  10.131.124.82  juju-990a73-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 01:54:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:54:16 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 01:54:17 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:54:17 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:54:17 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 01:54:17 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-db-app-0: 01:54:18 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-app-0: 01:54:18 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 01:55:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 01:55:10 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:55:10 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 01:55:10 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 01:57:18 ERROR unit.postgresql/0.juju-log upgrade:4: Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-postgresql-0: 02:00:50 ERROR juju.worker.uniter.context cannot apply changes: granting secrets access: cannot change access to "secret://e701d6ac-dbe9-4ed5-8aac-8e5d13990a73/cq1lujv80emjuababs20" for "application-database-app": cannot grant access to secret in scope of "relation-database-app.first-database#postgresql.database" which is not alive
+unit-postgresql-0: 02:00:50 ERROR juju.worker.uniter.operation hook "database-relation-changed" (via hook dispatching script: dispatch) failed: granting secrets access: cannot change access to "secret://e701d6ac-dbe9-4ed5-8aac-8e5d13990a73/cq1lujv80emjuababs20" for "application-database-app": cannot grant access to secret in scope of "relation-database-app.first-database#postgresql.database" which is not alive
+unit-db-app-0: 02:02:03 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#5#postgresql": settings e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#5#postgresql not found (not found)
+unit-db-app-0: 02:04:33 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#7#postgresql": settings e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#7#postgresql not found (not found)
+unit-postgresql-0: 02:04:33 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#7#db-app": settings e701d6ac-dbe9-4ed5-8aac-8e5d13990a73:r#7#db-app not found (not found)
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
