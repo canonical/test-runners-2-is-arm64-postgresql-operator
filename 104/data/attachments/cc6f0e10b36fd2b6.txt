@@ -1,0 +1,23 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:17:47Z
+
+App                  Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql-test-app           active    0/1  postgresql             0  no       
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+postgresql-test-app/1  waiting   allocating  1                               waiting for machine
+
+Machine  State  Address  Inst id  Base          AZ  Message
+1        down            pending  ubuntu@22.04      Failed creating instance record: Add instance info to the database: This "instances" entry already exists
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-test-app-0: 01:40:11 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:40:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:40:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:40:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+controller-0: 01:47:41 ERROR juju.worker.provisioner cannot start instance for machine "1": Failed creating instance record: Add instance info to the database: This "instances" entry already exists
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

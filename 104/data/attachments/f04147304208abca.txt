@@ -1,0 +1,213 @@
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:38:20Z
+
+App         Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql  14.11    active      3  postgresql             0  no       
+
+Unit           Workload  Agent  Machine  Public address  Ports     Message
+postgresql/0*  active    idle   0        10.148.101.69   5432/tcp  
+postgresql/1   active    idle   1        10.148.101.43   5432/tcp  Primary
+postgresql/2   active    idle   2        10.148.101.66   5432/tcp  
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.148.101.69  juju-e262c4-0  ubuntu@22.04      Running
+1        started  10.148.101.43  juju-e262c4-1  ubuntu@22.04      Running
+2        started  10.148.101.66  juju-e262c4-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-postgresql-0: 02:14:18 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:14:18 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:14:18 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 02:14:18 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:14:20 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 02:14:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:14:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:14:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:14:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:14:27 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:14:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:14:27 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:27:02 ERROR unit.postgresql/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-postgresql-0: 02:27:24 ERROR unit.postgresql/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-postgresql-0: 02:27:33 ERROR unit.postgresql/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+controller-0: 02:29:37 ERROR juju.worker.cleaner cannot cleanup state: reading cleanup document: EOF
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:38 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:39 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:41 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:41 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:41 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:43 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:29:44 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "instance-mutater" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "machiner" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "fan-configurer" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "reboot-executor" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "upgrade-series" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: tomb: still alive
+machine-0: 02:29:47 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:29:47 ERROR juju.worker.dependency "deployer" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:53 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:56 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:29:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 02:30:04 ERROR juju.worker.dependency "instance-mutater" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "fan-configurer" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: use of closed network connection
+machine-2: 02:30:04 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-2: 02:30:04 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-1: 02:30:08 ERROR juju.api.watcher error trying to stop watcher: hub txn watcher sync error: starting change stream: read tcp 10.148.101.23:59500->10.148.101.23:37017: i/o timeout
+machine-0: 02:30:08 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: unknown watcher id (not found)
+machine-0: 02:30:11 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: connection is shut down
+machine-0: 02:30:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 02:30:11 ERROR juju.worker.logger connection is shut down
+machine-2: 02:30:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 02:30:16 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [074294] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:30:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [074294] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-2: 02:30:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [074294] "machine-2" cannot open api: unable to connect to API: read tcp 10.148.101.66:33824->10.148.101.23:17070: read: connection reset by peer
+machine-1: 02:30:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [074294] "machine-1" cannot open api: unable to connect to API: read tcp 10.148.101.43:33008->10.148.101.23:17070: read: connection reset by peer
+machine-0: 02:30:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [074294] "machine-0" cannot open api: unable to connect to API: read tcp 10.148.101.69:45294->10.148.101.23:17070: read: connection reset by peer
+
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
