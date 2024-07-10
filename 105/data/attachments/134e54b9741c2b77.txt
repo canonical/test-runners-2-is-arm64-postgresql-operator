@@ -1,0 +1,135 @@
+[32mINFO    [0m integration.test_backups:test_backups.py:84 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:03:53Z
+
+App                       Version  Status  Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws            14.11    active      2  postgresql                                 0  no       
+s3-integrator                      active      1  s3-integrator             latest/stable   23  no       
+self-signed-certificates           active      1  self-signed-certificates  latest/edge    156  no       
+
+Unit                         Workload     Agent      Machine  Public address  Ports     Message
+postgresql-aws/0             error        idle       2        10.160.175.65   5432/tcp  hook failed: "database-peers-relation-changed"
+postgresql-aws/1*            maintenance  executing  3        10.160.175.108  5432/tcp  reconfiguring cluster
+s3-integrator/0*             active       idle       0        10.160.175.49             
+self-signed-certificates/0*  active       idle       1        10.160.175.111            
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.160.175.49   juju-88bc74-0  ubuntu@22.04      Running
+1        started  10.160.175.111  juju-88bc74-1  ubuntu@22.04      Running
+2        started  10.160.175.65   juju-88bc74-2  ubuntu@22.04      Running
+3        started  10.160.175.108  juju-88bc74-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 01:59:11 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 01:59:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:59:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:59:14 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 01:59:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:59:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 01:59:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-s3-integrator-0: 01:59:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 01:59:42 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-3: 01:59:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:59:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 01:59:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-0: 01:59:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 01:59:47 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:59:47 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 01:59:47 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-0: 02:03:49 ERROR unit.postgresql-aws/0.juju-log database-peers:3: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connection.py", line 652, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connection.py", line 805, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/util/ssl_.py", line 465, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/util/ssl_.py", line 509, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='10.160.175.108', port=8008): Max retries exceeded with url: /cluster (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/src/cluster.py", line 247, in get_primary
+    cluster_status = requests.get(
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/requests/adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='10.160.175.108', port=8008): Max retries exceeded with url: /cluster (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1007)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/./src/charm.py", line 1705, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/src/backups.py", line 567, in _on_s3_credential_changed
+    if not self.charm.is_primary:
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/./src/charm.py", line 749, in is_primary
+    return self.unit.name == self._patroni.get_primary(unit_name_pattern=True)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/src/cluster.py", line 244, in get_primary
+    for attempt in Retrying(stop=stop_after_attempt(2 * len(self.peers_ips) + 1)):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/tenacity/__init__.py", line 437, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/tenacity/__init__.py", line 370, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffffba601120 state=finished raised SSLError>]
+unit-postgresql-aws-0: 02:03:49 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

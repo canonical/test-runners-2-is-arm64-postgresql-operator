@@ -1,0 +1,46 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:24:55Z
+
+App                       Version  Status  Scale  Charm                     Channel      Rev  Exposed  Message
+postgresql                14.11    active      3  postgresql                               0  no       
+self-signed-certificates           active      1  self-signed-certificates  latest/edge  156  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports     Message
+postgresql/0                 active    idle       0        10.164.229.23   5432/tcp  
+postgresql/1                 active    idle       1        10.164.229.111  5432/tcp  Primary
+postgresql/2*                active    executing  2        10.164.229.200  5432/tcp  (get-password) 
+self-signed-certificates/0*  active    idle       3        10.164.229.184            
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.164.229.23   juju-f90a52-0  ubuntu@22.04      Running
+1        started  10.164.229.111  juju-f90a52-1  ubuntu@22.04      Running
+2        started  10.164.229.200  juju-f90a52-2  ubuntu@22.04      Running
+3        started  10.164.229.184  juju-f90a52-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 02:10:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:10:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:10:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:10:12 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 02:10:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:10:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:10:13 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-1: 02:10:13 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:10:13 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:10:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-self-signed-certificates-0: 02:10:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:10:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:10:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:10:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:10:16 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-0: 02:10:16 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:22:41 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "abe3cfde-9cf4-4f7a-8af3-4c386df90a52:r#3#self-signed-certificates": settings abe3cfde-9cf4-4f7a-8af3-4c386df90a52:r#3#self-signed-certificates not found (not found)
+unit-postgresql-1: 02:22:58 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "abe3cfde-9cf4-4f7a-8af3-4c386df90a52:r#3#self-signed-certificates": settings abe3cfde-9cf4-4f7a-8af3-4c386df90a52:r#3#self-signed-certificates not found (not found)
+unit-postgresql-2: 02:24:04 ERROR unit.postgresql/2.juju-log Failed to list PostgreSQL database users: connection to server at "10.164.229.111", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
