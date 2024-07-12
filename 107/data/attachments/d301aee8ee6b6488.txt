@@ -1,0 +1,26 @@
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  01:49:57Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+postgresql                    waiting    0/3  postgresql           14/edge      435  no       waiting for machine
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/edge  175  no       waiting for machine
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+postgresql-test-app/0  waiting   allocating  3                               waiting for machine
+postgresql/0           waiting   allocating  0                               waiting for machine
+postgresql/1           waiting   allocating  1                               waiting for machine
+postgresql/2           waiting   allocating  2                               waiting for machine
+
+Machine  State  Address  Inst id  Base          AZ  Message
+0        down            pending  ubuntu@22.04      failed to start machine 0 (write tcp 10.219.169.197:47090->10.219.169.1:8443: write: broken pipe), retrying in 10s (1...
+1        down            pending  ubuntu@22.04      failed to start machine 1 (write tcp 10.219.169.197:47090->10.219.169.1:8443: write: broken pipe), retrying in 10s (1...
+2        down            pending  ubuntu@22.04      failed to start machine 2 (write tcp 10.219.169.197:47090->10.219.169.1:8443: write: broken pipe), retrying in 10s (1...
+3        down            pending  ubuntu@22.04      failed to start machine 3 (write tcp 10.219.169.197:47090->10.219.169.1:8443: write: broken pipe), retrying in 10s (1...
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
