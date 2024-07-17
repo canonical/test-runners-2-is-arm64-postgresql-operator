@@ -1,0 +1,24 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:24:20Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           unknown      0  landscape-client  latest/edge   69  no       
+pg                         waiting    0/3  postgresql                       0  no       waiting for machine
+ubuntu-advantage           unknown      0  ubuntu-advantage  latest/edge   87  no       
+
+Unit  Workload  Agent       Machine  Public address  Ports  Message
+pg/0  waiting   allocating  0        10.51.246.240          waiting for machine
+pg/1  waiting   allocating  1        10.51.246.224          waiting for machine
+pg/2  waiting   allocating  2        10.51.246.42           waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        pending  10.51.246.240  juju-689c1b-0  ubuntu@22.04      Running
+1        pending  10.51.246.224  juju-689c1b-1  ubuntu@22.04      Running
+2        pending  10.51.246.42   juju-689c1b-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

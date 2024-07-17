@@ -1,0 +1,77 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:24:04Z
+
+App                  Version  Status  Scale  Charm                Channel        Rev  Exposed  Message
+data-integrator               active      1  data-integrator      latest/edge     37  no       
+postgresql           14.11    active      3  postgresql                            0  no       Primary
+postgresql-test-app           active      1  postgresql-test-app  latest/stable  145  no       received database credentials of the first database
+
+Unit                    Workload  Agent      Machine  Public address  Ports     Message
+data-integrator/0*      active    idle       3        10.8.166.250              
+postgresql-test-app/0*  active    idle       4        10.8.166.16               received database credentials of the first database
+postgresql/0            active    executing  0        10.8.166.37     5432/tcp  
+postgresql/1            active    executing  1        10.8.166.102    5432/tcp  
+postgresql/2*           error     idle       2        10.8.166.75     5432/tcp  hook failed: "update-status"
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.8.166.37   juju-a336fb-0  ubuntu@22.04      Running
+1        started  10.8.166.102  juju-a336fb-1  ubuntu@22.04      Running
+2        started  10.8.166.75   juju-a336fb-2  ubuntu@22.04      Running
+3        started  10.8.166.250  juju-a336fb-3  ubuntu@22.04      Running
+4        started  10.8.166.16   juju-a336fb-4  ubuntu@22.04      Running
+
+Offer              Application  Charm       Rev  Connected  Endpoint           Interface         Role
+replication-offer  postgresql   postgresql  0    1/1        replication-offer  postgresql_async  provider
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 01:55:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:55:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:55:28 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-data-integrator-0: 01:55:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 01:55:29 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-2: 01:55:29 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:55:29 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 01:55:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:55:30 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:55:30 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 01:55:30 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:55:30 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+machine-0: 01:55:30 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:55:30 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 01:55:31 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 01:55:31 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 01:56:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 01:56:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 01:56:26 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: no container types determined
+unit-postgresql-test-app-0: 01:56:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 01:59:30 ERROR unit.postgresql/2.juju-log database-peers:2: failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 315, in enable_disable_extensions
+    with self._connect_to_database(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 127, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "10.8.166.75", port 5432 failed: timeout expired
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1012, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 544, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 327, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-2: 02:23:20 ERROR juju.worker.uniter.context cannot apply changes: granting secrets access: cannot change access to "secret://b7047916-8203-4ed4-856a-a94390a336fb/cqbiffhpfusjsd1khcjg" for "application-remote-4f6bdb9f599b4cf289bdf98728ae4003": cannot grant access to secret in scope of "relation-remote-4f6bdb9f599b4cf289bdf98728ae4003.replication#postgresql.replication-offer" which is not alive
+unit-postgresql-2: 02:23:20 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: granting secrets access: cannot change access to "secret://b7047916-8203-4ed4-856a-a94390a336fb/cqbiffhpfusjsd1khcjg" for "application-remote-4f6bdb9f599b4cf289bdf98728ae4003": cannot grant access to secret in scope of "relation-remote-4f6bdb9f599b4cf289bdf98728ae4003.replication#postgresql.replication-offer" which is not alive
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
