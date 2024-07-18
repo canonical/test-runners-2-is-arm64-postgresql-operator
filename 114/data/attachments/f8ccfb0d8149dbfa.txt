@@ -1,0 +1,34 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.1.8    unsupported  02:58:42Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Exposed  Message
+data-integrator               waiting    0/1  data-integrator      latest/edge     37  no       waiting for machine
+postgresql                    waiting    0/3  postgresql                            0  no       waiting for machine
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/stable  145  no       waiting for machine
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+data-integrator/0      waiting   allocating  3        10.146.127.3           waiting for machine
+postgresql-test-app/0  waiting   allocating  4        10.146.127.133         waiting for machine
+postgresql/0           waiting   allocating  0        10.146.127.153         waiting for machine
+postgresql/1           waiting   allocating  1        10.146.127.64          waiting for machine
+postgresql/2           waiting   allocating  2        10.146.127.92          waiting for machine
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        pending  10.146.127.153  juju-b44eae-0  ubuntu@22.04      Running
+1        pending  10.146.127.64   juju-b44eae-1  ubuntu@22.04      Running
+2        pending  10.146.127.92   juju-b44eae-2  ubuntu@22.04      Running
+3        pending  10.146.127.3    juju-b44eae-3  ubuntu@22.04      Running
+4        pending  10.146.127.133  juju-b44eae-4  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
