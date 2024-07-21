@@ -1,0 +1,153 @@
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:53:03Z
+
+App           Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+database-app           active      1  postgresql-test-app  latest/edge  181  no       
+db-app                 active      1  postgresql-test-app  latest/edge  181  no       
+postgresql    14.12    active      1  postgresql                          0  no       
+
+Unit             Workload  Agent  Machine  Public address  Ports     Message
+database-app/0*  active    idle   1        10.66.158.173             
+db-app/0*        active    idle   0        10.66.158.161             
+postgresql/0*    blocked   idle   2        10.66.158.174   5432/tcp  Failed to retrieve the PostgreSQL version to initialise/update db relation
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.66.158.161  juju-ab3324-0  ubuntu@22.04      Running
+1        started  10.66.158.173  juju-ab3324-1  ubuntu@22.04      Running
+2        started  10.66.158.174  juju-ab3324-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 04:21:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 04:21:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-app-0: 04:21:54 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 04:21:56 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 04:21:56 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-db-app-0: 04:21:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 04:22:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 04:22:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 04:22:33 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 04:24:41 ERROR unit.postgresql/0.juju-log upgrade:4: Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-postgresql-0: 04:26:25 ERROR unit.postgresql/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 575, in _on_peer_relation_changed
+    self._update_new_unit_status()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 600, in _update_new_unit_status
+    self._update_relation_endpoints()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1723, in _update_relation_endpoints
+    self.legacy_db_relation.update_endpoints()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/src/relations/db.py", line 397, in update_endpoints
+    unit_relation_databag.update(data)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1816, in update
+    super().update(other, **kwargs)
+  File "/usr/lib/python3.10/_collections_abc.py", line 999, in update
+    self[key] = other[key]
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1792, in __setitem__
+    self._validate_write(key, value)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1760, in _validate_write
+    raise RelationDataTypeError(f'relation data values must be strings, not {type(value)}')
+ops.model.RelationDataTypeError: relation data values must be strings, not <class 'NoneType'>
+unit-postgresql-0: 04:26:26 ERROR juju.worker.uniter.operation hook "secret-changed" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-0: 04:27:58 ERROR juju.worker.uniter.context cannot apply changes: granting secrets access: cannot change access to "secret://fb134ed3-cdee-4724-8c5c-a9958fab3324/cqe8sj6jviajt3dpgrm0" for "application-database-app": cannot grant access to secret in scope of "relation-database-app.first-database#postgresql.database" which is not alive
+unit-postgresql-0: 04:27:58 ERROR juju.worker.uniter.operation hook "database-relation-changed" (via hook dispatching script: dispatch) failed: granting secrets access: cannot change access to "secret://fb134ed3-cdee-4724-8c5c-a9958fab3324/cqe8sj6jviajt3dpgrm0" for "application-database-app": cannot grant access to secret in scope of "relation-database-app.first-database#postgresql.database" which is not alive
+unit-postgresql-0: 04:28:55 ERROR unit.postgresql/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 575, in _on_peer_relation_changed
+    self._update_new_unit_status()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 600, in _update_new_unit_status
+    self._update_relation_endpoints()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1723, in _update_relation_endpoints
+    self.legacy_db_relation.update_endpoints()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/src/relations/db.py", line 397, in update_endpoints
+    unit_relation_databag.update(data)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1816, in update
+    super().update(other, **kwargs)
+  File "/usr/lib/python3.10/_collections_abc.py", line 999, in update
+    self[key] = other[key]
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1792, in __setitem__
+    self._validate_write(key, value)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/model.py", line 1760, in _validate_write
+    raise RelationDataTypeError(f'relation data values must be strings, not {type(value)}')
+ops.model.RelationDataTypeError: relation data values must be strings, not <class 'NoneType'>
+unit-postgresql-0: 04:28:55 ERROR juju.worker.uniter.operation hook "secret-changed" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-0: 04:30:10 ERROR unit.postgresql/0.juju-log Failed to get PostgreSQL version: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-postgresql-0: 04:30:10 ERROR unit.postgresql/0.juju-log 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 433, in get_postgresql_version
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/src/relations/db.py", line 323, in update_endpoints
+    postgresql_version = self.charm.postgresql.get_postgresql_version()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 439, in get_postgresql_version
+    raise PostgreSQLGetPostgreSQLVersionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLGetPostgreSQLVersionError
+unit-database-app-0: 04:30:15 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "fb134ed3-cdee-4724-8c5c-a9958fab3324:r#6#postgresql": settings fb134ed3-cdee-4724-8c5c-a9958fab3324:r#6#postgresql not found (not found)
+unit-postgresql-0: 04:30:15 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "fb134ed3-cdee-4724-8c5c-a9958fab3324:r#6#database-app": settings fb134ed3-cdee-4724-8c5c-a9958fab3324:r#6#database-app not found (not found)
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
