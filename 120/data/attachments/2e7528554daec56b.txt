@@ -1,0 +1,146 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  07:07:12Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+another-application           active      1  postgresql-test-app  latest/edge  181  no       received database credentials of the first database
+another-database     14.12    active      2  postgresql                          0  no       
+database             14.12    active      4  postgresql                          1  no       
+postgresql-test-app           active      2  postgresql-test-app  latest/edge  181  no       received database credentials of the second database
+
+Unit                    Workload     Agent      Machine  Public address  Ports     Message
+another-application/0*  active       idle       6        10.62.243.186             received database credentials of the first database
+another-database/0*     active       idle       3        10.62.243.241   5432/tcp  Primary
+another-database/1      active       idle       4        10.62.243.6     5432/tcp  
+database/0*             maintenance  executing  2        10.62.243.35    5432/tcp  reconfiguring cluster
+database/1              error        idle       5        10.62.243.40    5432/tcp  hook failed: "database-peers-relation-changed"
+database/2              waiting      executing  7        10.62.243.162             (start) waiting to start PostgreSQL
+database/3              waiting      executing  8        10.62.243.126             (start) waiting to start PostgreSQL
+postgresql-test-app/0*  active       idle       0        10.62.243.129             received database credentials of the second database
+postgresql-test-app/1   active       idle       1        10.62.243.253             received database credentials of the second database
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.62.243.129  juju-49301c-0  ubuntu@22.04      Running
+1        started  10.62.243.253  juju-49301c-1  ubuntu@22.04      Running
+2        started  10.62.243.35   juju-49301c-2  ubuntu@22.04      Running
+3        started  10.62.243.241  juju-49301c-3  ubuntu@22.04      Running
+4        started  10.62.243.6    juju-49301c-4  ubuntu@22.04      Running
+5        started  10.62.243.40   juju-49301c-5  ubuntu@22.04      Running
+6        started  10.62.243.186  juju-49301c-6  ubuntu@22.04      Running
+7        started  10.62.243.162  juju-49301c-7  ubuntu@22.04      Running
+8        started  10.62.243.126  juju-49301c-8  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 05:56:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 05:56:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 05:56:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 05:56:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 05:56:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 05:56:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 05:57:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 05:57:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-0: 05:57:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 05:57:18 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 05:57:18 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 05:57:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 05:57:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-0: 05:57:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-1: 05:57:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-0: 06:03:32 ERROR unit.database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-database-0: 06:05:01 ERROR unit.database/0.juju-log database-peers:1: failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 307, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 1015, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 331, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-another-database-0: 06:07:30 ERROR unit.another-database/0.juju-log database-peers:4: failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 307, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-another-database-0/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-another-database-0/charm/./src/charm.py", line 1015, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 331, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-database-0: 06:10:50 ERROR unit.database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 06:19:36 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 06:21:00 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 06:22:06 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 06:23:26 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+machine-5: 06:39:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 06:39:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-1: 06:39:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 06:51:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 06:51:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-application-0: 06:51:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-8: 07:04:51 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-8: 07:04:51 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-3: 07:04:52 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-7: 07:04:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 07:04:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-2: 07:04:54 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-1: 07:07:10 ERROR unit.database/1.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-1/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-database-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-1/charm/./src/charm.py", line 564, in _on_peer_relation_changed
+    or int(self._patroni.member_replication_lag) > 1000
+ValueError: invalid literal for int() with base 10: 'unknown'
+unit-database-1: 07:07:10 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
