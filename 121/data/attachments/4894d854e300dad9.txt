@@ -1,0 +1,42 @@
+[32mINFO    [0m integration.test_backups:test_backups.py:84 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:49:04Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-gcp            14.12    active       2  postgresql                                 0  no       
+s3-integrator                      blocked      1  s3-integrator             latest/stable   23  no       Missing parameters: ['access-key', 'secret-key']
+self-signed-certificates           active       1  self-signed-certificates  latest/edge    162  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports     Message
+postgresql-gcp/0             waiting   executing  2        10.197.42.95    5432/tcp  awaiting for cluster to start
+postgresql-gcp/1*            active    idle       3        10.197.42.144   5432/tcp  Primary
+s3-integrator/0*             blocked   idle       0        10.197.42.11              Missing parameters: ['access-key', 'secret-key']
+self-signed-certificates/0*  active    idle       1        10.197.42.203             
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.197.42.11   juju-519d08-0  ubuntu@22.04      Running
+1        started  10.197.42.203  juju-519d08-1  ubuntu@22.04      Running
+2        started  10.197.42.95   juju-519d08-2  ubuntu@22.04      Running
+3        started  10.197.42.144  juju-519d08-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:39:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:39:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 02:39:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-self-signed-certificates-0: 02:39:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:39:31 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:39:31 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:39:31 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:39:31 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-gcp-1: 02:40:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:40:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:40:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:40:06 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:40:06 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-gcp-0: 02:40:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-gcp-1: 02:48:36 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

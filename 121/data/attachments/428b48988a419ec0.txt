@@ -1,0 +1,40 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  05:24:37Z
+
+App                       Version  Status  Scale  Charm                     Channel      Rev  Exposed  Message
+postgresql                14.12    active      3  postgresql                               0  no       
+self-signed-certificates           active      1  self-signed-certificates  latest/edge  162  no       
+
+Unit                         Workload  Agent  Machine  Public address  Ports     Message
+postgresql/0                 active    idle   0        10.103.26.31    5432/tcp  
+postgresql/1                 waiting   idle   1        10.103.26.151   5432/tcp  awaiting for member to start
+postgresql/2*                active    idle   2        10.103.26.48    5432/tcp  Primary
+self-signed-certificates/0*  active    idle   3        10.103.26.238             
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.103.26.31   juju-1f07e5-0  ubuntu@22.04      Running
+1        started  10.103.26.151  juju-1f07e5-1  ubuntu@22.04      Running
+2        started  10.103.26.48   juju-1f07e5-2  ubuntu@22.04      Running
+3        started  10.103.26.238  juju-1f07e5-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 05:02:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 05:02:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 05:02:54 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 05:02:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 05:02:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 05:03:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 05:03:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 05:03:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 05:03:06 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 05:03:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 05:03:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 05:03:16 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-self-signed-certificates-0: 05:15:42 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-postgresql-2: 05:22:09 ERROR unit.postgresql/2.juju-log Failed to list PostgreSQL database users: connection to server at "10.103.26.48", port 5432 failed: timeout expired
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

@@ -1,0 +1,44 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:14:17Z
+
+App                  Version  Status  Scale  Charm                Channel        Rev  Exposed  Message
+data-integrator               active      1  data-integrator      latest/edge     37  no       
+postgresql           14.12    active      3  postgresql                            0  no       
+postgresql-test-app           active      1  postgresql-test-app  latest/stable  145  no       
+
+Unit                    Workload     Agent      Machine  Public address  Ports     Message
+data-integrator/0*      active       idle       3        10.147.188.129            
+postgresql-test-app/0*  active       idle       4        10.147.188.223            
+postgresql/0*           maintenance  executing  0        10.147.188.123  5432/tcp  reconfiguring cluster
+postgresql/1            active       idle       1        10.147.188.149  5432/tcp  
+postgresql/2            waiting      idle       2        10.147.188.170  5432/tcp  awaiting for cluster to start
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.147.188.123  juju-1ce381-0  ubuntu@22.04      Running
+1        started  10.147.188.149  juju-1ce381-1  ubuntu@22.04      Running
+2        started  10.147.188.170  juju-1ce381-2  ubuntu@22.04      Running
+3        started  10.147.188.129  juju-1ce381-3  ubuntu@22.04      Running
+4        started  10.147.188.223  juju-1ce381-4  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 02:57:54 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:57:54 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-data-integrator-0: 02:58:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:58:02 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:58:02 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:58:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:58:06 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:58:06 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:58:06 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:58:06 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:58:10 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:58:10 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 02:59:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:59:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 02:59:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
