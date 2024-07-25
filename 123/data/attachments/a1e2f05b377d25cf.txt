@@ -1,0 +1,93 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:16:21Z
+
+App                      Version  Status   Scale  Charm                Channel        Rev  Exposed  Message
+another-application               active       1  postgresql-test-app  latest/edge    189  no       received database credentials of the first database
+another-data-integrator           waiting    0/1  data-integrator      latest/stable   26  no       waiting for machine
+another-database         14.12    active       2  postgresql                            1  no       
+data-integrator                   blocked      1  data-integrator      latest/stable   26  no       Please relate the data-integrator with the desired product
+database                 14.12    active       2  postgresql                            0  no       
+postgresql-test-app               active       2  postgresql-test-app  latest/edge    189  no       received database credentials of the second database
+
+Unit                       Workload     Agent       Machine  Public address  Ports     Message
+another-application/0*     active       idle        6        10.11.67.235              received database credentials of the first database
+another-data-integrator/0  waiting      allocating  10       10.11.67.226              waiting for machine
+another-database/0         active       executing   2        10.11.67.152    5432/tcp  
+another-database/1*        maintenance  executing   3        10.11.67.151    5432/tcp  reconfiguring cluster
+data-integrator/0*         blocked      idle        9        10.11.67.162              Please relate the data-integrator with the desired product
+database/2*                active       executing   7        10.11.67.136    5432/tcp  
+database/3                 active       executing   8        10.11.67.5      5432/tcp  
+postgresql-test-app/0*     active       idle        0        10.11.67.211              received database credentials of the second database
+postgresql-test-app/1      active       idle        1        10.11.67.190              received database credentials of the second database
+
+Machine  State    Address       Inst id         Base          AZ  Message
+0        started  10.11.67.211  juju-5271be-0   ubuntu@22.04      Running
+1        started  10.11.67.190  juju-5271be-1   ubuntu@22.04      Running
+2        started  10.11.67.152  juju-5271be-2   ubuntu@22.04      Running
+3        started  10.11.67.151  juju-5271be-3   ubuntu@22.04      Running
+6        started  10.11.67.235  juju-5271be-6   ubuntu@22.04      Running
+7        started  10.11.67.136  juju-5271be-7   ubuntu@22.04      Running
+8        started  10.11.67.5    juju-5271be-8   ubuntu@22.04      Running
+9        started  10.11.67.162  juju-5271be-9   ubuntu@22.04      Running
+10       pending  10.11.67.226  juju-5271be-10  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 03:23:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:23:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 03:23:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:23:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:23:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 03:23:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:23:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:23:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:23:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:23:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-1: 03:23:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-0: 03:23:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 03:23:10 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 03:23:10 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-0: 03:23:10 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app-1: 03:28:09 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.11.67.190:43790->10.11.67.109:17070: i/o timeout
+machine-5: 03:36:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 03:36:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-1: 03:36:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-1: 03:38:04 ERROR unit.another-database/1.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+machine-6: 03:42:22 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 03:42:22 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-application-0: 03:42:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-7: 03:48:11 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 03:48:11 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-2: 03:48:11 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-8: 03:48:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-8: 03:48:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-3: 03:48:16 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 03:56:37 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+unit-database-3: 03:57:32 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.11.67.5:45558->10.11.67.109:17070: i/o timeout
+machine-8: 03:58:25 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.11.67.5:45530->10.11.67.109:17070: i/o timeout: write tcp 10.11.67.5:45530->10.11.67.109:17070: i/o timeout
+unit-database-3: 03:58:30 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "df1529ff-a7b0-46d3-8bc4-d474d85271be:r#7#postgresql-test-app": settings df1529ff-a7b0-46d3-8bc4-d474d85271be:r#7#postgresql-test-app not found (not found)
+machine-9: 04:02:18 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-9: 04:02:18 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-data-integrator-0: 04:02:19 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-1: 04:03:49 ERROR unit.another-database/1.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+machine-3: 04:04:19 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.11.67.151:53700->10.11.67.109:17070: i/o timeout: write tcp 10.11.67.151:53700->10.11.67.109:17070: i/o timeout
+unit-database-2: 04:07:36 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: connection to server at "10.11.67.136", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-database-2: 04:08:22 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: connection to server at "10.11.67.136", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-database-2: 04:10:48 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-database-2: 04:11:28 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-database-2: 04:12:20 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-database-2: 04:13:42 ERROR unit.database/2.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
