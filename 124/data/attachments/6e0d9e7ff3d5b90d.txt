@@ -1,0 +1,29 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:12:40Z
+
+App                  Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql-test-app  14.12    active    0/1  postgresql             0  no       
+
+Unit                   Workload  Agent  Machine  Public address  Ports  Message
+postgresql-test-app/1  unknown   lost   1        10.60.216.191          agent lost, see 'juju show-status-log postgresql-test-app/1'
+
+Machine  State  Address        Inst id        Base          AZ  Message
+1        down   10.60.216.191  juju-84da70-1  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 01:58:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:58:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 01:58:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app-0: 02:00:06 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-postgresql-test-app-0: 02:00:28 ERROR unit.postgresql-test-app/0.juju-log upgrade:2: Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+machine-0: 02:01:57 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: block devices not found for machine "0" not found (not found)
+machine-0: 02:01:57 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: can't get jobs for machine: machine 0 not found
+machine-1: 02:04:25 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:04:25 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 02:04:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
