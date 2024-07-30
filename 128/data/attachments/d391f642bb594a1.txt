@@ -1,0 +1,45 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/postgresql-test-app-195
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-349' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1133, in _create_connection_transport
+    await waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 646, in __await_impl_timeout__
+    async with asyncio_timeout(self.open_timeout):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 169, in __aexit__
+    self._do_exit(exc_type)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 252, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting

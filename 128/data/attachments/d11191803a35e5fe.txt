@@ -1,0 +1,48 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/s3-integrator-23
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/self-signed-certificates-162
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m integration.test_backups:test_backups.py:84 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:55:45Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws                     waiting    0/2  postgresql                                 0  no       waiting for machine
+s3-integrator                      waiting    0/1  s3-integrator             latest/stable   23  no       waiting for machine
+self-signed-certificates           waiting    0/1  self-signed-certificates  latest/edge    162  no       waiting for machine
+
+Unit                        Workload  Agent       Machine  Public address  Ports  Message
+postgresql-aws/0            waiting   allocating  2        10.163.136.148         waiting for machine
+postgresql-aws/1            waiting   allocating  3        10.163.136.109         waiting for machine
+s3-integrator/0             waiting   allocating  0        10.163.136.143         waiting for machine
+self-signed-certificates/0  waiting   allocating  1        10.163.136.170         waiting for machine
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        pending  10.163.136.143  juju-8034ea-0  ubuntu@22.04      Running
+1        pending  10.163.136.170  juju-8034ea-1  ubuntu@22.04      Running
+2        pending  10.163.136.148  juju-8034ea-2  ubuntu@22.04      Running
+3        pending  10.163.136.109  juju-8034ea-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

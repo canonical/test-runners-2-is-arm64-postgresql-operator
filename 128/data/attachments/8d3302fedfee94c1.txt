@@ -1,0 +1,216 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:22:20Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           blocked      3  landscape-client  latest/edge   69  no       Registration failed!
+pg                14.12    active       3  postgresql                       0  no       
+ubuntu-advantage           active       3  ubuntu-advantage  latest/edge   87  no       Attached (esm-apps,esm-infra)
+
+Unit                   Workload     Agent      Machine  Public address  Ports     Message
+pg/0                   maintenance  executing  0        10.50.52.204    5432/tcp  reinitialising replica
+  landscape-client/0   blocked      idle                10.50.52.204              Registration failed!
+  ubuntu-advantage/0   active       idle                10.50.52.204              Attached (esm-apps,esm-infra)
+pg/1                   active       executing  1        10.50.52.120    5432/tcp  
+  landscape-client/1   blocked      idle                10.50.52.120              Registration failed!
+  ubuntu-advantage/1   active       idle                10.50.52.120              Attached (esm-apps,esm-infra)
+pg/2*                  maintenance  executing  2        10.50.52.118    5432/tcp  reconfiguring cluster
+  landscape-client/2*  blocked      idle                10.50.52.118              Registration failed!
+  ubuntu-advantage/2*  active       idle                10.50.52.118              Attached (esm-apps,esm-infra)
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.50.52.204  juju-892e69-0  ubuntu@22.04      Running
+1        started  10.50.52.120  juju-892e69-1  ubuntu@22.04      Running
+2        started  10.50.52.118  juju-892e69-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-pg-2: 04:01:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 04:01:46 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 04:01:46 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 04:01:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 04:01:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 04:01:52 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 04:01:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 04:01:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-0: 04:01:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 04:13:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 04:13:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 04:13:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 04:13:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 04:13:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 04:13:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 04:17:25 CRITICAL unit.landscape-client/0.juju-log   File "/var/lib/juju/agents/unit-landscape-client-0/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/./src/charm.py", line 215, in _on_config_changed
+    self.run_landscape_client()
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/./src/charm.py", line 190, in run_landscape_client
+    self.send_registration()
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/./src/charm.py", line 178, in send_registration
+    if process_helper([CLIENT_CONFIG_CMD, "--silent"]):
+  File "/var/lib/juju/agents/unit-landscape-client-0/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-0: 04:17:25 CRITICAL unit.landscape-client/0.juju-log Traceback (most recent call last):
+Failure: landscape.lib.amp.MethodCallError: timeout
+
+
+unit-landscape-client-2: 04:17:36 CRITICAL unit.landscape-client/2.juju-log   File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 215, in _on_config_changed
+    self.run_landscape_client()
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 190, in run_landscape_client
+    self.send_registration()
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 178, in send_registration
+    if process_helper([CLIENT_CONFIG_CMD, "--silent"]):
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-2: 04:17:36 CRITICAL unit.landscape-client/2.juju-log Traceback (most recent call last):
+Failure: landscape.lib.amp.MethodCallError: timeout
+
+
+unit-landscape-client-1: 04:17:42 CRITICAL unit.landscape-client/1.juju-log   File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 215, in _on_config_changed
+    self.run_landscape_client()
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 190, in run_landscape_client
+    self.send_registration()
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 178, in send_registration
+    if process_helper([CLIENT_CONFIG_CMD, "--silent"]):
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-1: 04:17:43 CRITICAL unit.landscape-client/1.juju-log Traceback (most recent call last):
+Failure: landscape.lib.amp.MethodCallError: timeout
+
+
+unit-pg-2: 04:21:26 ERROR unit.pg/2.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connectionpool.py", line 466, in _make_request
+    self._validate_conn(conn)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connectionpool.py", line 1095, in _validate_conn
+    conn.connect()
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connection.py", line 652, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connection.py", line 805, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/util/ssl_.py", line 465, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/util/ssl_.py", line 509, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connectionpool.py", line 490, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='10.50.52.120', port=8008): Max retries exceeded with url: /cluster (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/src/cluster.py", line 250, in get_primary
+    cluster_status = requests.get(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/requests/adapters.py", line 698, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='10.50.52.120', port=8008): Max retries exceeded with url: /cluster (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1007)')))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-pg-2/charm/./src/charm.py", line 560, in _on_peer_relation_changed
+    not self.is_primary
+  File "/var/lib/juju/agents/unit-pg-2/charm/./src/charm.py", line 752, in is_primary
+    return self.unit.name == self._patroni.get_primary(unit_name_pattern=True)
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-pg-2/charm/src/cluster.py", line 247, in get_primary
+    for attempt in Retrying(stop=stop_after_attempt(2 * len(self.peers_ips) + 1)):
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/tenacity/__init__.py", line 419, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffff7fd51ff0 state=finished raised SSLError>]
+unit-pg-2: 04:21:27 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
