@@ -1,0 +1,189 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:49:41Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+another-application           active      1  postgresql-test-app  latest/edge  195  no       received database credentials of the first database
+another-database     14.12    active      2  postgresql                          1  no       
+database                      active    2/4  postgresql                          0  no       
+postgresql-test-app           active      2  postgresql-test-app  latest/edge  195  no       received database credentials of the second database
+
+Unit                    Workload  Agent       Machine  Public address  Ports     Message
+another-application/0*  active    idle        6        10.0.5.153                received database credentials of the first database
+another-database/0*     active    idle        3        10.0.5.242      5432/tcp  Primary
+another-database/1      waiting   idle        4        10.0.5.100      5432/tcp  awaiting for member to start
+database/0*             error     idle        2        10.0.5.183      5432/tcp  hook failed: "update-status"
+database/1              active    executing   5        10.0.5.5        5432/tcp  
+database/2              waiting   allocating  7        10.0.5.80                 waiting for machine
+database/3              waiting   allocating  8        10.0.5.37                 waiting for machine
+postgresql-test-app/0   active    idle        0        10.0.5.146                received database credentials of the second database
+postgresql-test-app/1*  active    idle        1        10.0.5.139                received database credentials of the second database
+
+Machine  State    Address     Inst id        Base          AZ  Message
+0        started  10.0.5.146  juju-236c12-0  ubuntu@22.04      Running
+1        started  10.0.5.139  juju-236c12-1  ubuntu@22.04      Running
+2        started  10.0.5.183  juju-236c12-2  ubuntu@22.04      Running
+3        started  10.0.5.242  juju-236c12-3  ubuntu@22.04      Running
+4        started  10.0.5.100  juju-236c12-4  ubuntu@22.04      Running
+5        started  10.0.5.5    juju-236c12-5  ubuntu@22.04      Running
+6        started  10.0.5.153  juju-236c12-6  ubuntu@22.04      Running
+7        pending  10.0.5.80   juju-236c12-7  ubuntu@22.04      Running
+8        pending  10.0.5.37   juju-236c12-8  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 03:59:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:59:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 03:59:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 03:59:37 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:59:37 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 03:59:40 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:59:54 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:59:54 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-0: 03:59:55 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 03:59:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:59:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-0: 04:00:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 04:00:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 04:00:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-1: 04:00:01 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-1: 04:08:32 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+machine-5: 04:14:30 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 04:14:30 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-1: 04:14:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-0: 04:21:17 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.0.5.183:34876->10.0.5.241:17070: i/o timeout
+unit-another-database-0: 04:21:39 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.0.5.242", port 5432 failed: timeout expired
+
+machine-2: 04:23:18 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.0.5.183:34850->10.0.5.241:17070: i/o timeout: write tcp 10.0.5.183:34850->10.0.5.241:17070: i/o timeout
+unit-another-application-0: 04:25:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 04:25:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 04:25:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-0: 04:32:34 ERROR unit.another-database/0.juju-log database:12: Failed to get PostgreSQL version: connection to server at "10.0.5.242", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-another-database-0: 04:32:34 ERROR unit.another-database/0.juju-log database:12: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 433, in get_postgresql_version
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-another-database-0/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "10.0.5.242", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-another-database-0/charm/src/relations/postgresql_provider.py", line 112, in _on_database_requested
+    event.relation.id, self.charm.postgresql.get_postgresql_version()
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-another-database-0/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 439, in get_postgresql_version
+    raise PostgreSQLGetPostgreSQLVersionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLGetPostgreSQLVersionError
+unit-database-1: 04:40:26 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-5: 04:40:27 ERROR juju.worker.uniter.metrics failed to close the collect-metrics listener: close unix /var/lib/juju/agents/unit-database-1/2614315043/s: use of closed network connection
+unit-database-1: 04:40:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [352dca] "unit-database-1" cannot open api: unable to connect to API: dial tcp 10.0.5.241:17070: i/o timeout
+unit-database-1: 04:40:45 ERROR unit.database/1.juju-log database:14: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/model.py", line 3180, in _run
+    result = subprocess.run(args, **kwargs)  # type: ignore
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-database-1/status-get', '--include-data', '--application=False', '--format=json')' returned non-zero exit status 1.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-1/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 546, in main
+    manager = _Manager(charm_class, use_juju_for_storage=use_juju_for_storage)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 429, in __init__
+    self.charm = self._make_charm(self.framework, self.dispatcher)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/main.py", line 432, in _make_charm
+    charm = self._charm_class(framework)
+  File "/var/lib/juju/agents/unit-database-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 376, in wrap_init
+    original_init(self, framework, *args, **kwargs)
+  File "/var/lib/juju/agents/unit-database-1/charm/./src/charm.py", line 199, in __init__
+    self._observer.start_observer()
+  File "/var/lib/juju/agents/unit-database-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-1/charm/src/cluster_topology_observer.py", line 59, in start_observer
+    if not isinstance(self._charm.unit.status, ActiveStatus) or self._charm._peers is None:
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/model.py", line 570, in status
+    s = self._backend.status_get(is_app=False)
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/model.py", line 3342, in status_get
+    content = self._run(
+  File "/var/lib/juju/agents/unit-database-1/charm/venv/ops/model.py", line 3182, in _run
+    raise ModelError(e.stderr) from e
+ops.model.ModelError: ERROR finding workload status: connection is shut down
+
+unit-database-1: 04:41:06 ERROR juju.worker.uniter.operation hook "database-relation-created" (via hook dispatching script: dispatch) failed: exit status 1
+unit-another-database-0: 04:44:24 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-database-0: 04:47:04 ERROR unit.database/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 529, in _on_peer_relation_changed
+    self.update_config()
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 1664, in update_config
+    cache = snap.SnapCache()
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 838, in __init__
+    self._load_installed_snaps()
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 888, in _load_installed_snaps
+    installed = self._snap_client.get_installed_snaps()
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 811, in get_installed_snaps
+    return self._request("GET", "snaps")
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 772, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 793, in _request_raw
+    response = self.opener.open(request, timeout=self.timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/operator_libs_linux/v2/snap.py", line 709, in http_open
+    return self.do_open(_UnixSocketConnection, req, socket_path=self.socket_path)
+  File "/usr/lib/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+unit-database-0: 04:47:22 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-test-app-0: 04:48:03 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.0.5.146:38212->10.0.5.241:17070: i/o timeout: write tcp 10.0.5.146:38212->10.0.5.241:17070: i/o timeout
+unit-another-application-0: 04:48:44 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-database-1: 04:48:50 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-another-database-0: 04:49:05 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.0.5.242", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
