@@ -1,0 +1,245 @@
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-2751' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=JujuConnectionError('Unable to connect to any endpoint: 10.74.176.101:17070')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 832, in _connect
+    raise errors.JujuConnectionError(
+juju.errors.JujuConnectionError: Unable to connect to any endpoint: 10.74.176.101:17070
+[31m[1mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  05:22:02Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+postgresql           14.12    blocked      3  postgresql                          0  no       failed to install snap packages
+postgresql-test-app           active       1  postgresql-test-app  latest/edge  205  no       
+
+Unit                    Workload  Agent      Machine  Public address  Ports     Message
+postgresql-test-app/0*  active    idle       3        10.74.176.132             
+postgresql/0            blocked   executing  0        10.74.176.102             failed to install snap packages
+postgresql/1            waiting   executing  1        10.74.176.62    5432/tcp  awaiting for cluster to start
+postgresql/2*           active    executing  2        10.74.176.183   5432/tcp  Primary
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.74.176.102  juju-f56eb4-0  ubuntu@22.04      Running
+1        started  10.74.176.62   juju-f56eb4-1  ubuntu@22.04      Running
+2        started  10.74.176.183  juju-f56eb4-2  ubuntu@22.04      Running
+3        started  10.74.176.132  juju-f56eb4-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 05:18:10 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 05:18:10 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 05:18:24 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 05:18:25 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 05:18:25 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 05:18:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 05:18:38 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 05:18:38 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 05:18:39 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 05:18:40 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 05:18:40 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 05:18:41 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 05:20:22 ERROR unit.postgresql/0.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="121"'] failed with output = ''
+machine-0: 05:20:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.74.176.102:39434->10.74.176.101:17070: write: connection reset by peer
+machine-0: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.102:39474->10.74.176.101:17070: write: connection reset by peer
+machine-3: 05:20:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.74.176.183:33582: use of closed network connection
+machine-2: 05:20:42 ERROR juju.worker.dependency "proxy-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "machiner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "instance-mutater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "upgrade-series" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "fan-configurer" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "reboot-executor" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.183:33592->10.74.176.101:17070: write: connection reset by peer
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.183:33592->10.74.176.101:17070: write: connection reset by peer
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.183:33592->10.74.176.101:17070: write: connection reset by peer
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.183:33592->10.74.176.101:17070: write: connection reset by peer
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.183:33592->10.74.176.101:17070: write: connection reset by peer
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 05:20:42 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 05:20:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.74.176.62:45132->10.74.176.101:17070: write: broken pipe
+machine-1: 05:20:42 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.74.176.62:45116: use of closed network connection
+machine-1: 05:20:42 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "proxy-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "machiner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "fan-configurer" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "instance-mutater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "upgrade-series" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "reboot-executor" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 05:20:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-3: 05:20:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8e3f67] "machine-3" cannot open api: unable to connect to API: dial tcp 10.74.176.101:17070: connect: connection refused
+machine-0: 05:20:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8e3f67] "machine-0" cannot open api: unable to connect to API: dial tcp 10.74.176.101:17070: connect: connection refused
+machine-1: 05:20:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8e3f67] "machine-1" cannot open api: unable to connect to API: dial tcp 10.74.176.101:17070: connect: connection refused
+machine-2: 05:20:45 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [8e3f67] "machine-2" cannot open api: unable to connect to API: dial tcp 10.74.176.101:17070: connect: connection refused
+unit-postgresql-0: 05:21:11 ERROR unit.postgresql/0.juju-log restart:0: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 943, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1682, in _validate_config_options
+    self.config.instance_default_text_search_config
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/data_platform_libs/v0/data_models.py", line 200, in config
+    return self.config_type(**translated_keys)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/main.py", line 339, in __init__
+    values, fields_set, validation_error = validate_model(__pydantic_self__.__class__, data)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/main.py", line 1074, in validate_model
+    v_, errors_ = field.validate(value, values, loc=field.alias, cls=cls_)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/fields.py", line 895, in validate
+    v, errors = self._apply_validators(v, values, loc, cls, self.post_validators)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/fields.py", line 1154, in _apply_validators
+    v = validator(cls, v, values, self, self.model_config)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/class_validators.py", line 304, in <lambda>
+    return lambda cls, v, values, field, config: validator(cls, v)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/src/config.py", line 246, in response_lc_values
+    output = subprocess.check_output(["ls", "/snap/charmed-postgresql/current/usr/lib/locale"])
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ls', '/snap/charmed-postgresql/current/usr/lib/locale']' returned non-zero exit status 2.
+unit-postgresql-0: 05:21:12 ERROR juju.worker.uniter.operation hook "restart-relation-joined" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-0: 05:21:25 ERROR unit.postgresql/0.juju-log restart:0: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/main.py", line 513, in _emit
+    self.framework.reemit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 870, in reemit
+    self._reemit()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 943, in _on_config_changed
+    self._validate_config_options()
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/./src/charm.py", line 1682, in _validate_config_options
+    self.config.instance_default_text_search_config
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/lib/charms/data_platform_libs/v0/data_models.py", line 200, in config
+    return self.config_type(**translated_keys)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/main.py", line 339, in __init__
+    values, fields_set, validation_error = validate_model(__pydantic_self__.__class__, data)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/main.py", line 1074, in validate_model
+    v_, errors_ = field.validate(value, values, loc=field.alias, cls=cls_)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/fields.py", line 895, in validate
+    v, errors = self._apply_validators(v, values, loc, cls, self.post_validators)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/fields.py", line 1154, in _apply_validators
+    v = validator(cls, v, values, self, self.model_config)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/venv/pydantic/class_validators.py", line 304, in <lambda>
+    return lambda cls, v, values, field, config: validator(cls, v)
+  File "/var/lib/juju/agents/unit-postgresql-0/charm/src/config.py", line 246, in response_lc_values
+    output = subprocess.check_output(["ls", "/snap/charmed-postgresql/current/usr/lib/locale"])
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ls', '/snap/charmed-postgresql/current/usr/lib/locale']' returned non-zero exit status 2.
+unit-postgresql-0: 05:21:25 ERROR juju.worker.uniter.operation hook "restart-relation-joined" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
