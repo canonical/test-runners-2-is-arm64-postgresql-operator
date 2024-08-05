@@ -1,0 +1,1739 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:57:35Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+postgresql           14.12    active      3  postgresql           14/edge      451  no       
+postgresql-test-app           active      1  postgresql-test-app  latest/edge  205  no       
+
+Unit                    Workload  Agent  Machine  Public address  Ports     Message
+postgresql-test-app/0*  active    idle   3        10.213.74.73              
+postgresql/0            active    idle   0        10.213.74.16    5432/tcp  
+postgresql/1*           active    idle   1        10.213.74.60    5432/tcp  Primary
+postgresql/2            active    idle   2        10.213.74.228   5432/tcp  
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.213.74.16   juju-56b465-0  ubuntu@22.04      Running
+1        started  10.213.74.60   juju-56b465-1  ubuntu@22.04      Running
+2        started  10.213.74.228  juju-56b465-2  ubuntu@22.04      Running
+3        started  10.213.74.73   juju-56b465-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 02:44:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:44:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:44:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:44:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 02:44:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:44:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:44:29 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:44:29 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:44:29 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:44:29 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:44:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:44:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app-0: 02:52:34 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:38 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:43 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:47 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:51 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:55 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:52:59 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:03 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:07 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:11 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:15 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:19 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:23 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:27 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:31 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:35 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:39 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:43 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:47 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:51 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:55 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:53:59 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:03 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:07 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:11 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:15 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:19 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:24 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:28 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:32 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:36 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:40 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:44 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:48 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:52 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:54:56 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:00 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:04 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:08 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:12 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:16 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:20 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:24 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:28 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:32 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:36 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:40 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:44 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:48 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:52 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:55:57 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:01 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:05 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:09 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:13 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:17 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:21 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:25 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:29 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:33 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:37 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:41 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:45 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:49 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:53 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:56:57 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:01 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:05 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:09 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:13 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:17 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:21 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:25 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+unit-postgresql-test-app-0: 02:57:30 ERROR unit.postgresql-test-app/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 538, in <module>
+    main(ApplicationCharm)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 289, in _on_clear_continuous_writes_action
+    if self._connection_string is None:
+  File "/var/lib/juju/agents/unit-postgresql-test-app-0/charm/./src/charm.py", line 259, in _connection_string
+    data = list(self.first_database.fetch_relation_data().values())[0]
+AttributeError: 'ApplicationCharm' object has no attribute 'first_database'
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

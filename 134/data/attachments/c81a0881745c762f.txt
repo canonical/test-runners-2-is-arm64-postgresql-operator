@@ -1,0 +1,124 @@
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:57:16Z
+
+App               Version  Status       Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           active           4  landscape-client  latest/edge   69  no       Client registered!
+pg                         active           4  postgresql                       0  no       
+ubuntu-advantage           maintenance      4  ubuntu-advantage  latest/edge   87  no       Configuring
+
+Unit                   Workload     Agent      Machine  Public address  Ports     Message
+pg/0*                  maintenance  executing  0        10.9.62.85      5432/tcp  reconfiguring cluster
+  landscape-client/3   active       idle                10.9.62.85                Client registered!
+  ubuntu-advantage/2   active       idle                10.9.62.85                Attached (esm-apps,esm-infra)
+pg/1                   active       idle       1        10.9.62.8       5432/tcp  
+  landscape-client/2*  active       idle                10.9.62.8                 Client registered!
+  ubuntu-advantage/0   active       idle                10.9.62.8                 Attached (esm-apps,esm-infra)
+pg/2                   active       idle       2        10.9.62.181     5432/tcp  
+  landscape-client/0   active       idle                10.9.62.181               Client registered!
+  ubuntu-advantage/1*  active       idle                10.9.62.181               Attached (esm-apps,esm-infra)
+pg/3                   error        idle       3        10.9.62.84                hook failed: "config-changed"
+  landscape-client/4   active       executing           10.9.62.84                (config-changed) Client registered!
+  ubuntu-advantage/3   maintenance  executing           10.9.62.84                (config-changed) Configuring
+
+Machine  State    Address      Inst id        Base          AZ  Message
+0        started  10.9.62.85   juju-b051db-0  ubuntu@22.04      Running
+1        started  10.9.62.8    juju-b051db-1  ubuntu@22.04      Running
+2        started  10.9.62.181  juju-b051db-2  ubuntu@22.04      Running
+3        started  10.9.62.84   juju-b051db-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-pg-0: 03:37:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 03:37:34 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:37:35 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:37:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:37:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:37:41 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:37:41 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:37:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:37:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 03:37:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-1: 03:37:51 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-3: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 03:47:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:54:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:54:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-3: 03:54:09 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-4: 03:55:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-3: 03:55:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-4: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while landscape-client/4 waiting for landscape-client leadership release: error blocking on leadership release: lease manager stopped
+unit-ubuntu-advantage-3: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while ubuntu-advantage/3 waiting for ubuntu-advantage leadership release: error blocking on leadership release: lease manager stopped
+unit-pg-3: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while pg/3 waiting for pg leadership release: error blocking on leadership release: lease manager stopped
+unit-ubuntu-advantage-2: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+unit-pg-0: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+unit-landscape-client-3: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+unit-pg-2: 03:55:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while pg/2 waiting for pg leadership release: error blocking on leadership release: lease manager stopped
+unit-ubuntu-advantage-1: 03:55:57 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while ubuntu-advantage/1 waiting for ubuntu-advantage leadership release: error blocking on leadership release: lease manager stopped
+unit-landscape-client-0: 03:55:57 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while landscape-client/0 waiting for landscape-client leadership release: error blocking on leadership release: lease manager stopped
+machine-3: 03:55:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-3: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.9.62.84:57862->10.9.62.238:17070: read: connection reset by peer
+machine-0: 03:55:59 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:55:59 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:55:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.9.62.85:60328->10.9.62.238:17070: write: broken pipe
+machine-2: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.9.62.181:35056->10.9.62.238:17070: write: broken pipe
+machine-2: 03:55:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.9.62.181:35056->10.9.62.238:17070: write: broken pipe
+machine-2: 03:55:59 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.9.62.181:35056->10.9.62.238:17070: write: broken pipe
+machine-1: 03:55:59 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.9.62.8:45206: use of closed network connection
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-1: 03:56:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-1: 03:56:01 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.9.62.8:41294->10.9.62.238:17070: write: broken pipe
+machine-3: 03:56:02 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-3" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-0: 03:56:03 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-0" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-2: 03:56:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-2" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-1: 03:56:05 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-1" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-3: 03:56:06 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-3" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-0: 03:56:06 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-0" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-2: 03:56:10 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-2" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-1: 03:56:10 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-1" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-3: 03:56:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-3" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+machine-0: 03:56:11 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [b07391] "machine-0" cannot open api: unable to connect to API: dial tcp 10.9.62.238:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
