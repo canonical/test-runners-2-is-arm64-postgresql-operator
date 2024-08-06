@@ -1,0 +1,32 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:47:37Z
+
+App           Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+database-app           active       1  postgresql-test-app  latest/edge  207  no       
+db-app                 active       1  postgresql-test-app  latest/edge  207  no       
+postgresql             waiting    0/1  postgresql                          0  no       waiting for machine
+
+Unit             Workload  Agent       Machine  Public address  Ports  Message
+database-app/0*  active    idle        1        10.170.20.97           
+db-app/0*        active    idle        0        10.170.20.235          
+postgresql/0     waiting   allocating  2                               waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.170.20.235  juju-2eb7ba-0  ubuntu@22.04      Running
+1        started  10.170.20.97   juju-2eb7ba-1  ubuntu@22.04      Running
+2        down                    pending        ubuntu@22.04      Creating container
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 03:59:29 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:59:29 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-app-0: 03:59:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 04:00:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 04:00:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-db-app-0: 04:00:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-db-app-0: 04:05:32 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.170.20.235:44110->10.170.20.129:17070: i/o timeout
+unit-db-app-0: 04:08:56 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.170.20.235:52560->10.170.20.129:17070: i/o timeout
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

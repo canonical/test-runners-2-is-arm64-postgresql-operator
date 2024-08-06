@@ -1,0 +1,111 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:47:42Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+another-application           active      1  postgresql-test-app  latest/edge  207  no       
+another-database     14.12    active      2  postgresql                          0  no       
+database             14.12    active      3  postgresql                          1  no       
+postgresql-test-app           active      2  postgresql-test-app  latest/edge  207  no       received database credentials of the second database
+
+Unit                    Workload  Agent      Machine  Public address  Ports     Message
+another-application/0*  active    idle       6        10.67.252.115             
+another-database/0*     active    idle       3        10.67.252.147   5432/tcp  Primary
+another-database/1      active    idle       4        10.67.252.225   5432/tcp  
+database/0*             error     idle       2        10.67.252.250   5432/tcp  hook failed: "database-peers-relation-changed"
+database/2              active    executing  7        10.67.252.102   5432/tcp  
+database/3              active    executing  8        10.67.252.120   5432/tcp  
+postgresql-test-app/0*  active    idle       0        10.67.252.219             received database credentials of the second database
+postgresql-test-app/1   active    idle       1        10.67.252.49              received database credentials of the second database
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.67.252.219  juju-587d42-0  ubuntu@22.04      Running
+1        started  10.67.252.49   juju-587d42-1  ubuntu@22.04      Running
+2        started  10.67.252.250  juju-587d42-2  ubuntu@22.04      Running
+3        started  10.67.252.147  juju-587d42-3  ubuntu@22.04      Running
+4        started  10.67.252.225  juju-587d42-4  ubuntu@22.04      Running
+6        started  10.67.252.115  juju-587d42-6  ubuntu@22.04      Running
+7        started  10.67.252.102  juju-587d42-7  ubuntu@22.04      Running
+8        started  10.67.252.120  juju-587d42-8  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 03:48:49 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:48:49 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 03:48:50 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:50:49 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:50:49 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 03:50:55 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:51:44 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:51:44 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:51:44 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 03:51:44 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 03:51:44 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:51:44 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-0: 03:51:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-1: 03:51:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-0: 03:51:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-0: 03:59:45 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: timeout expired
+
+unit-database-0: 04:00:14 ERROR unit.database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.250", port 5432 failed: timeout expired
+
+machine-5: 04:07:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 04:07:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-1: 04:07:32 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-another-database-0: 04:09:18 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: timeout expired
+
+unit-another-database-0: 04:13:12 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: timeout expired
+
+unit-another-database-0: 04:13:28 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-another-database-0: 04:13:36 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-another-database-0: 04:14:43 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: timeout expired
+
+unit-another-database-0: 04:15:22 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 04:15:35 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-another-database-0: 04:16:30 ERROR unit.another-database/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.67.252.147", port 5432 failed: timeout expired
+
+unit-another-application-0: 04:24:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 04:24:43 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 04:24:43 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 04:28:16 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.67.252.49:33118->10.67.252.198:17070: i/o timeout: write tcp 10.67.252.49:33118->10.67.252.198:17070: i/o timeout
+machine-7: 04:32:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 04:32:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-2: 04:32:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-8: 04:32:01 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-8: 04:32:01 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-3: 04:32:02 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-1: 04:34:59 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.67.252.199:41074->10.67.252.198:17070: i/o timeout
+machine-5: 04:46:10 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.67.252.199:48092->10.67.252.198:17070: i/o timeout: write tcp 10.67.252.199:48092->10.67.252.198:17070: i/o timeout
+unit-database-0: 04:47:33 ERROR unit.database/0.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-database-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-database-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-database-0/charm/./src/charm.py", line 564, in _on_peer_relation_changed
+    or int(self._patroni.member_replication_lag) > 1000
+ValueError: invalid literal for int() with base 10: 'unknown'
+unit-database-0: 04:47:33 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
