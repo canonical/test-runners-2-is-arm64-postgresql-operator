@@ -1,0 +1,88 @@
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[31m[1mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  08:04:22Z
+
+App               Version  Status  Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           active      4  landscape-client  latest/edge   69  no       Client registered!
+pg                14.12    active      4  postgresql                       0  no       
+ubuntu-advantage           active      4  ubuntu-advantage  latest/edge   91  no       Attached (esm-apps,esm-infra)
+
+Unit                   Workload     Agent      Machine  Public address  Ports     Message
+pg/0                   active       idle       0        10.231.196.149  5432/tcp  
+  landscape-client/1   active       idle                10.231.196.149            Client registered!
+  ubuntu-advantage/1*  active       idle                10.231.196.149            Attached (esm-apps,esm-infra)
+pg/1*                  maintenance  executing  1        10.231.196.9    5432/tcp  reconfiguring cluster
+  landscape-client/0*  active       idle                10.231.196.9              Client registered!
+  ubuntu-advantage/2   active       idle                10.231.196.9              Attached (esm-apps,esm-infra)
+pg/2                   waiting      executing  2        10.231.196.67   5432/tcp  awaiting for member to start
+  landscape-client/2   active       idle                10.231.196.67             Client registered!
+  ubuntu-advantage/0   active       idle                10.231.196.67             Attached (esm-apps,esm-infra)
+pg/3                   waiting      executing  3        10.231.196.155            (start) waiting to start PostgreSQL
+  landscape-client/3   active       executing           10.231.196.155            (config-changed) Client registered!
+  ubuntu-advantage/3   active       executing           10.231.196.155            (config-changed) Attached (esm-apps,esm-infra)
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.231.196.149  juju-30e9ed-0  ubuntu@22.04      Running
+1        started  10.231.196.9    juju-30e9ed-1  ubuntu@22.04      Running
+2        started  10.231.196.67   juju-30e9ed-2  ubuntu@22.04      Running
+3        started  10.231.196.155  juju-30e9ed-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-pg-1: 07:46:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 07:46:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 07:46:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 07:46:21 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 07:46:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 07:46:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 07:46:50 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 07:46:50 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-0: 07:46:51 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 07:54:02 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 07:54:02 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 07:54:02 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 07:54:02 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 07:54:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 07:54:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 07:59:21 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 07:59:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-3: 07:59:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-3: 08:00:21 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 127
+unit-ubuntu-advantage-3: 08:00:22 ERROR unit.unit-ubuntu-advantage-3.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 2183, in _run
+    result = run(args, **kwargs)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-ubuntu-advantage-3/config-get', '--format=json')' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/./src/charm.py", line 359, in <module>
+    main(UbuntuAdvantageCharm)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/main.py", line 426, in main
+    charm = charm_class(framework)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/./src/charm.py", line 174, in __init__
+    self._setup_proxy_env()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/./src/charm.py", line 189, in _setup_proxy_env
+    self.env["http_proxy"] = self.config.get("override-http-proxy") or self.env.get(
+  File "/usr/lib/python3.10/_collections_abc.py", line 824, in get
+    return self[key]
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 547, in __getitem__
+    return self._data[key]
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 531, in _data
+    data = self._lazy_data = self._load()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 1092, in _load
+    return self._backend.config_get()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 2299, in config_get
+    out = self._run('config-get', return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-3/charm/venv/ops/model.py", line 2189, in _run
+    raise ModelError(e.stderr)
+ops.model.ModelError: b'ERROR not implemented for restricted context not implemented\n'
+unit-ubuntu-advantage-3: 08:00:22 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
