@@ -1,0 +1,376 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/s3-integrator-23
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/self-signed-certificates-170
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: agent initialising
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: waiting to start PostgreSQL
+  postgresql-aws/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reinitialising replica
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:78 deleting the previously created backups
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-3167' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 651, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1133, in _create_connection_transport
+    await waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 646, in __await_impl_timeout__
+    async with asyncio_timeout(self.open_timeout):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 169, in __aexit__
+    self._do_exit(exc_type)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 252, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-3164' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=TimeoutError()>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    await protocol.handshake(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 319, in handshake
+    status_code, response_headers = await self.read_http_response()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 139, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+  File "/usr/lib/python3.10/asyncio/streams.py", line 524, in readline
+    line = await self.readuntil(sep)
+  File "/usr/lib/python3.10/asyncio/streams.py", line 616, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/usr/lib/python3.10/asyncio/streams.py", line 501, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 646, in __await_impl_timeout__
+    async with asyncio_timeout(self.open_timeout):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 169, in __aexit__
+    self._do_exit(exc_type)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/async_timeout.py", line 252, in _do_exit
+    raise asyncio.TimeoutError
+asyncio.exceptions.TimeoutError
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:58:06Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws            14.12    active     0/2  postgresql                                 0  no       
+s3-integrator                      blocked    0/1  s3-integrator             latest/stable   23  no       Missing parameters: ['access-key', 'secret-key']
+self-signed-certificates           active     0/1  self-signed-certificates  latest/edge    170  no       
+
+Unit                        Workload  Agent  Machine  Public address  Ports     Message
+postgresql-aws/0            unknown   lost   2        10.115.0.191    5432/tcp  agent lost, see 'juju show-status-log postgresql-aws/0'
+postgresql-aws/1            unknown   lost   3        10.115.0.158    5432/tcp  agent lost, see 'juju show-status-log postgresql-aws/1'
+s3-integrator/0             unknown   lost   0        10.115.0.200              agent lost, see 'juju show-status-log s3-integrator/0'
+self-signed-certificates/0  unknown   lost   1        10.115.0.7                agent lost, see 'juju show-status-log self-signed-certificates/0'
+
+Machine  State  Address       Inst id        Base          AZ  Message
+0        down   10.115.0.200  juju-f6af38-0  ubuntu@22.04      Running
+1        down   10.115.0.7    juju-f6af38-1  ubuntu@22.04      Running
+2        down   10.115.0.191  juju-f6af38-2  ubuntu@22.04      Running
+3        down   10.115.0.158  juju-f6af38-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:47:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:47:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 02:47:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:47:23 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:47:23 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 02:47:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:48:10 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:48:10 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 02:48:10 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-0: 02:48:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:48:22 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:48:22 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 02:54:00 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+machine-1: 02:56:32 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+machine-3: 02:56:32 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.115.0.158:54640: use of closed network connection
+machine-1: 02:56:32 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-3: 02:56:32 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.158:54636->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-1: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.7:47478->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41938->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:32 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.115.0.191:42800: use of closed network connection
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 02:56:34 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42808->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-2: 02:56:34 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.115.0.191:42788->10.115.0.38:17070: write: connection reset by peer
+machine-0: 02:56:34 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.115.0.200:41918->10.115.0.38:17070: write: connection reset by peer
+machine-3: 02:56:38 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 02:56:38 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:56:40 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-2: 02:56:42 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-3: 02:56:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 02:56:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:56:44 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-2: 02:56:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 02:56:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-3: 02:56:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:56:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-2: 02:56:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-0: 02:56:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-3: 02:56:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-1: 02:56:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-2: 02:56:58 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-0: 02:56:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-3: 02:57:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-1: 02:57:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-2: 02:57:05 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-3: 02:57:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-1: 02:57:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-0: 02:57:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-0: 02:57:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 02:57:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: can't reset agent password: connection is shut down
+machine-3: 02:57:47 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: connection is shut down
+machine-3: 02:57:47 ERROR juju.worker.logger connection is shut down
+machine-3: 02:57:47 ERROR juju.worker.dependency "upgrade-steps-runner" manifold worker returned unexpected error: connection is shut down
+machine-3: 02:57:47 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:47 ERROR juju.worker.dependency "upgrade-steps-runner" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:47 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:47 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: connection is shut down
+machine-3: 02:57:47 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:48 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:48 ERROR juju.worker.dependency "deployer" manifold worker returned unexpected error: connection is shut down
+machine-1: 02:57:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-3: 02:57:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 02:57:56 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-2" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-1: 02:57:58 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-1" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-0: 02:57:59 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-0" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+machine-3: 02:58:00 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [4f04e0] "machine-3" cannot open api: unable to connect to API: dial tcp 10.115.0.38:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
