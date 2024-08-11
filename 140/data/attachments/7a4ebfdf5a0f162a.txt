@@ -1,0 +1,317 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:42:03Z
+
+App               Version  Status       Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           error            3  landscape-client  latest/edge   69  no       hook failed: "install"
+pg                14.12    active           3  postgresql                       0  no       
+ubuntu-advantage           maintenance      3  ubuntu-advantage  latest/edge   91  no       Configuring
+
+Unit                   Workload     Agent      Machine  Public address  Ports     Message
+pg/0                   active       idle       0        10.199.153.173  5432/tcp  
+  landscape-client/0   error        idle                10.199.153.173            hook failed: "install"
+  ubuntu-advantage/0   maintenance  executing           10.199.153.173            (config-changed) Configuring
+pg/1                   active       idle       1        10.199.153.146  5432/tcp  
+  landscape-client/1*  error        idle                10.199.153.146            hook failed: "install"
+  ubuntu-advantage/2   maintenance  executing           10.199.153.146            (config-changed) Configuring
+pg/2*                  active       executing  2        10.199.153.128  5432/tcp  (leader-elected) 
+  landscape-client/2   error        idle                10.199.153.128            hook failed: "install"
+  ubuntu-advantage/1*  maintenance  executing           10.199.153.128            (leader-elected) installing charm software
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.199.153.173  juju-cfac9a-0  ubuntu@22.04      Running
+1        started  10.199.153.146  juju-cfac9a-1  ubuntu@22.04      Running
+2        started  10.199.153.128  juju-cfac9a-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-pg-0: 03:22:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 03:22:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:22:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:22:33 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:22:33 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 03:22:33 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:22:34 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:22:34 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:22:35 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:22:35 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 03:22:38 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-0: 03:34:28 ERROR unit.pg/0.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+unit-pg-1: 03:37:41 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+machine-0: 03:39:19 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.199.153.173:40924->10.199.153.57:17070: i/o timeout: write tcp 10.199.153.173:40924->10.199.153.57:17070: i/o timeout
+machine-1: 03:39:19 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-landscape-client-0: 03:39:20 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 03:39:20 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 03:39:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 03:39:21 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 03:39:25 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 127
+unit-ubuntu-advantage-2: 03:39:26 ERROR unit.unit-ubuntu-advantage-2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 2183, in _run
+    result = run(args, **kwargs)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('/var/lib/juju/tools/unit-ubuntu-advantage-2/config-get', '--format=json')' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/./src/charm.py", line 359, in <module>
+    main(UbuntuAdvantageCharm)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/main.py", line 426, in main
+    charm = charm_class(framework)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/./src/charm.py", line 174, in __init__
+    self._setup_proxy_env()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/./src/charm.py", line 189, in _setup_proxy_env
+    self.env["http_proxy"] = self.config.get("override-http-proxy") or self.env.get(
+  File "/usr/lib/python3.10/_collections_abc.py", line 824, in get
+    return self[key]
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 547, in __getitem__
+    return self._data[key]
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 531, in _data
+    data = self._lazy_data = self._load()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 1092, in _load
+    return self._backend.config_get()
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 2299, in config_get
+    out = self._run('config-get', return_output=True, use_json=True)
+  File "/var/lib/juju/agents/unit-ubuntu-advantage-2/charm/venv/ops/model.py", line 2189, in _run
+    raise ModelError(e.stderr)
+ops.model.ModelError: b'ERROR not implemented for restricted context not implemented\n'
+unit-ubuntu-advantage-2: 03:39:26 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 1
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.199.153.146:41830: use of closed network connection
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:41784->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:51 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41712->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:41722->10.199.153.57:17070: write: broken pipe
+machine-2: 03:40:52 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.199.153.128:36758: use of closed network connection
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:41774->10.199.153.57:17070: write: broken pipe
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33690->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.199.153.173:33762: use of closed network connection
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.146:37314->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:33702->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-0: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.173:40942->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-2: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.199.153.128:43388->10.199.153.57:17070: write: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.199.153.146:37278->10.199.153.57:17070: write: broken pipe
+machine-1: 03:40:52 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:40:52 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-1: 03:40:52 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: read tcp 10.199.153.146:37278->10.199.153.57:17070: read: connection reset by peer
+machine-0: 03:40:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a830a1] "machine-0" cannot open api: unable to connect to API: dial tcp 10.199.153.57:17070: connect: connection refused
+machine-2: 03:41:03 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a830a1] "machine-2" cannot open api: unable to connect to API: dial tcp 10.199.153.57:17070: connect: connection refused
+machine-1: 03:41:04 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a830a1] "machine-1" cannot open api: unable to connect to API: dial tcp 10.199.153.57:17070: connect: connection refused
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

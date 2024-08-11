@@ -1,0 +1,381 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: agent initialising
+  postgresql/2 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [allocating] waiting: waiting for machine
+  landscape-server/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: agent initialising
+  postgresql/1 [allocating] waiting: agent initialising
+  postgresql/2 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: installing charm software
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] maintenance: installing PostgreSQL
+  postgresql/1 [executing] maintenance: installing PostgreSQL
+  postgresql/2 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [idle] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for cluster to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] maintenance: Installing apt packages
+  landscape-server/1 [executing] maintenance: Installing apt packages
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for member to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: awaiting for member to start
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [executing] waiting: Waiting on relations: db, amqp, haproxy
+  landscape-server/1 [executing] maintenance: Configuring OIDC
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: 
+  landscape-server/1 [idle] waiting: Waiting on relations: db, amqp
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db, amqp
+  landscape-server/1 [idle] waiting: Waiting on relations: db, amqp
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db, amqp
+  landscape-server/1 [idle] waiting: Waiting on relations: db, amqp
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db, amqp
+  landscape-server/1 [idle] waiting: Waiting on relations: db, amqp
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] maintenance: reinitialising replica
+  postgresql/1 [idle] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db
+  landscape-server/1 [idle] waiting: Waiting on relations: db
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] maintenance: reinitialising replica
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db
+  landscape-server/1 [idle] waiting: Waiting on relations: db
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] maintenance: reinitialising replica
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db
+  landscape-server/1 [idle] waiting: Waiting on relations: db
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] maintenance: reinitialising replica
+  postgresql/1 [executing] waiting: awaiting for cluster to start
+  postgresql/2 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-server/0 [idle] waiting: Waiting on relations: db
+  landscape-server/1 [idle] waiting: Waiting on relations: db
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:11:38Z
+
+App               Version  Status   Scale  Charm             Channel        Rev  Exposed  Message
+haproxy                    active       1  haproxy           latest/stable   75  yes      Unit is ready
+landscape-server           waiting      2  landscape-server  latest/stable  111  no       Waiting on relations: db
+postgresql        14.12    active       3  postgresql                         0  no       
+rabbitmq-server   3.9.13   active       1  rabbitmq-server   3.9/stable     188  no       Unit is ready
+
+Unit                 Workload     Agent      Machine  Public address  Ports           Message
+haproxy/0*           active       idle       3        10.120.243.162  80,443/tcp      Unit is ready
+landscape-server/0*  waiting      idle       4        10.120.243.26                   Waiting on relations: db
+landscape-server/1   waiting      idle       5        10.120.243.249                  Waiting on relations: db
+postgresql/0         error        idle       0        10.120.243.213  5432/tcp        hook failed: "database-peers-relation-changed"
+postgresql/1*        waiting      executing  1        10.120.243.228  5432/tcp        awaiting for cluster to start
+postgresql/2         maintenance  executing  2        10.120.243.74   5432/tcp        reconfiguring cluster
+rabbitmq-server/0*   active       executing  6        10.120.243.155  5672,15672/tcp  Unit is ready
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.120.243.213  juju-dca312-0  ubuntu@22.04      Running
+1        started  10.120.243.228  juju-dca312-1  ubuntu@22.04      Running
+2        started  10.120.243.74   juju-dca312-2  ubuntu@22.04      Running
+3        started  10.120.243.162  juju-dca312-3  ubuntu@22.04      Running
+4        started  10.120.243.26   juju-dca312-4  ubuntu@22.04      Running
+5        started  10.120.243.249  juju-dca312-5  ubuntu@22.04      Running
+6        started  10.120.243.155  juju-dca312-6  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 02:58:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:58:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:58:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:58:10 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:58:10 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:58:13 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:58:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:58:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:58:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:58:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:58:23 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 02:58:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 02:58:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-rabbitmq-server-0: 02:58:27 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:58:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:58:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-haproxy-0: 02:58:33 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 02:58:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:58:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-landscape-server-0: 02:58:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 02:58:47 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 02:58:47 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-landscape-server-1: 02:58:48 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 03:04:36 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-landscape-server-1: 03:06:33 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.120.243.249:51606->10.120.243.225:17070: i/o timeout: write tcp 10.120.243.249:51606->10.120.243.225:17070: i/o timeout
+machine-0: 03:11:01 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+machine-0: 03:11:07 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-postgresql-2: 03:11:13 ERROR unit.postgresql/2.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 529, in _on_peer_relation_changed
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1664, in update_config
+    cache = snap.SnapCache()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 838, in __init__
+    self._load_installed_snaps()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 888, in _load_installed_snaps
+    installed = self._snap_client.get_installed_snaps()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 811, in get_installed_snaps
+    return self._request("GET", "snaps")
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 772, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 793, in _request_raw
+    response = self.opener.open(request, timeout=self.timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 709, in http_open
+    return self.do_open(_UnixSocketConnection, req, socket_path=self.socket_path)
+  File "/usr/lib/python3.10/urllib/request.py", line 1352, in do_open
+    r = h.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+machine-2: 03:11:14 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: connection is shut down
+machine-2: 03:11:14 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+unit-landscape-server-1: 03:11:27 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.120.243.249:39360->10.120.243.225:17070: write: broken pipe: write tcp 10.120.243.249:39360->10.120.243.225:17070: write: broken pipe
+unit-haproxy-0: 03:11:29 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
