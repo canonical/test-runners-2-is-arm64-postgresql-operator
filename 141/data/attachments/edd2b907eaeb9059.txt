@@ -1,0 +1,268 @@
+[32mINFO    [0m integration.ha_tests.test_restore_cluster:test_restore_cluster.py:80 creating a table in the database
+[32mINFO    [0m integration.ha_tests.test_restore_cluster:test_restore_cluster.py:88 Downscaling the existing cluster
+[32mINFO    [0m integration.ha_tests.test_restore_cluster:test_restore_cluster.py:97 Upscaling the second cluster with the old data
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [idle] active: Primary
+  second-cluster/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/2 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/2 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/2 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/2 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] active: 
+  second-cluster/2 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [idle] active: Primary
+  second-cluster/2 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [idle] active: Primary
+  second-cluster/2 [idle] active: 
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/3 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/2 [executing] active: 
+  second-cluster/3 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/3 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reconfiguring cluster
+  second-cluster/2 [executing] active: 
+  second-cluster/3 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  second-cluster/1 [executing] maintenance: reinitialising replica
+  second-cluster/2 [executing] active: 
+  second-cluster/3 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:36:56Z
+
+App             Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+second-cluster  14.12    active      3  postgresql             1  no       
+
+Unit               Workload     Agent      Machine  Public address  Ports     Message
+second-cluster/1*  maintenance  executing  4        10.146.74.229   5432/tcp  reconfiguring cluster
+second-cluster/2   active       executing  5        10.146.74.41    5432/tcp  
+second-cluster/3   waiting      executing  6        10.146.74.8     5432/tcp  awaiting for member to start
+
+Machine  State    Address        Inst id        Base          AZ  Message
+4        started  10.146.74.229  juju-60beb5-4  ubuntu@22.04      Running
+5        started  10.146.74.41   juju-60beb5-5  ubuntu@22.04      Running
+6        started  10.146.74.8    juju-60beb5-6  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 01:57:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:57:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-first-cluster-2: 01:57:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:57:56 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:57:56 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-first-cluster-0: 01:57:56 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:57:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:57:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-first-cluster-1: 01:58:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-second-cluster-0: 01:58:37 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 01:58:37 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:58:37 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-second-cluster-0: 02:07:40 ERROR unit.second-cluster/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.146.74.85", port 5432 failed: timeout expired
+
+unit-second-cluster-0: 02:11:31 ERROR unit.second-cluster/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connection.py", line 464, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connectionpool.py", line 538, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/urllib3/connectionpool.py", line 369, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='10.146.74.85', port=8008): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/src/cluster.py", line 250, in get_primary
+    cluster_status = requests.get(
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/requests/adapters.py", line 713, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='10.146.74.85', port=8008): Read timed out. (read timeout=5)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/./src/charm.py", line 560, in _on_peer_relation_changed
+    not self.is_primary
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/./src/charm.py", line 752, in is_primary
+    return self.unit.name == self._patroni.get_primary(unit_name_pattern=True)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/src/cluster.py", line 247, in get_primary
+    for attempt in Retrying(stop=stop_after_attempt(2 * len(self.peers_ips) + 1)):
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/tenacity/__init__.py", line 443, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/tenacity/__init__.py", line 376, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-second-cluster-0/charm/venv/tenacity/__init__.py", line 419, in exc_check
+    raise retry_exc from fut.exception()
+tenacity.RetryError: RetryError[<Future at 0xffffac4345e0 state=finished raised ReadTimeout>]
+unit-second-cluster-0: 02:11:35 ERROR juju.worker.uniter.operation hook "secret-changed" (via hook dispatching script: dispatch) failed: exit status 1
+machine-4: 02:17:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:17:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-second-cluster-1: 02:17:20 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 02:25:29 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 02:25:29 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-second-cluster-2: 02:25:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 02:33:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 02:33:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-second-cluster-3: 02:33:07 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-second-cluster-2: 02:36:41 ERROR unit.second-cluster/2.juju-log database-peers:3: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-second-cluster-2/charm/./src/charm.py", line 564, in _on_peer_relation_changed
+    or int(self._patroni.member_replication_lag) > 1000
+ValueError: invalid literal for int() with base 10: 'unknown'
+unit-second-cluster-2: 02:36:42 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
