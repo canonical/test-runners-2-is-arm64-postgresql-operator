@@ -1,0 +1,39 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:46:57Z
+
+App         Version  Status       Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           maintenance      3  postgresql             0  no       installing PostgreSQL
+
+Unit           Workload     Agent      Machine  Public address  Ports  Message
+postgresql/0*  maintenance  executing  0        10.69.3.116            (install) installing PostgreSQL
+postgresql/1   maintenance  executing  1        10.69.3.141            (install) installing PostgreSQL
+postgresql/2   maintenance  executing  2        10.69.3.121            (install) installing PostgreSQL
+
+Machine  State    Address      Inst id        Base          AZ  Message
+0        started  10.69.3.116  juju-f4dd5e-0  ubuntu@22.04      Running
+1        started  10.69.3.141  juju-f4dd5e-1  ubuntu@22.04      Running
+2        started  10.69.3.121  juju-f4dd5e-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:45:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:45:46 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 02:45:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-1: 02:45:50 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-1" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-2: 02:45:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-2" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 02:45:54 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-0" cannot open api: unable to connect to API: dial tcp 10.69.3.205:17070: connect: connection refused
+machine-1: 02:45:55 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-1" cannot open api: unable to connect to API: dial tcp 10.69.3.205:17070: connect: connection refused
+machine-2: 02:45:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [a1346d] "machine-2" cannot open api: unable to connect to API: dial tcp 10.69.3.205:17070: connect: connection refused
+machine-0: 02:46:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:46:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:46:01 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:46:02 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:46:02 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:46:03 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:46:03 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:46:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 02:46:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
