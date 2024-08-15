@@ -1,0 +1,173 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/postgresql-459
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/postgresql-test-app-216
+[32mINFO    [0m integration.ha_tests.test_upgrade:test_upgrade.py:48 Wait for applications to become active
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [allocating] waiting: waiting for machine
+  postgresql/1 [allocating] waiting: waiting for machine
+  postgresql/2 [allocating] waiting: waiting for machine
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-4599' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=InvalidStatusCode(503, Headers([('Content-Type', 'text/plain; charset=utf-8'), ('X-Content-Type-Options', 'nosniff'), ('Date', 'Thu, 15 Aug 2024 02:07:27 GMT'), ('Content-Length', '31')]))>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    await protocol.handshake(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 325, in handshake
+    raise InvalidStatusCode(status_code, response_headers)
+websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 503
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting

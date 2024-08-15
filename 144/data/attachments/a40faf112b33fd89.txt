@@ -1,0 +1,143 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/s3-integrator-32
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/self-signed-certificates-173
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: agent initialising
+  postgresql-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing charm software
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:78 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:14:55Z
+
+App                       Version  Status   Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws                     waiting      2  postgresql                                 0  no       waiting to start PostgreSQL
+s3-integrator                      blocked      1  s3-integrator             latest/stable   32  no       Missing parameters: ['access-key', 'secret-key']
+self-signed-certificates           active       1  self-signed-certificates  latest/edge    173  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports  Message
+postgresql-aws/0             waiting   executing  2        10.233.93.182          waiting to start PostgreSQL
+postgresql-aws/1*            waiting   executing  3        10.233.93.63           waiting to start PostgreSQL
+s3-integrator/0*             blocked   idle       0        10.233.93.113          Missing parameters: ['access-key', 'secret-key']
+self-signed-certificates/0*  active    executing  1        10.233.93.249          
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.233.93.113  juju-4f7825-0  ubuntu@22.04      Running
+1        started  10.233.93.249  juju-4f7825-1  ubuntu@22.04      Running
+2        started  10.233.93.182  juju-4f7825-2  ubuntu@22.04      Running
+3        started  10.233.93.63   juju-4f7825-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-3: 03:12:46 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:12:46 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 03:12:47 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:12:50 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:12:50 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:12:50 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:12:50 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 03:12:50 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-0: 03:12:51 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 03:12:52 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:12:52 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 03:12:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

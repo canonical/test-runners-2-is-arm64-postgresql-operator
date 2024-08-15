@@ -1,0 +1,56 @@
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-4602' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=InvalidStatusCode(404, Headers([('Content-Type', 'text/plain; charset=utf-8'), ('X-Content-Type-Options', 'nosniff'), ('Date', 'Thu, 15 Aug 2024 02:07:32 GMT'), ('Content-Length', '19'), ('Connection', 'close')]))>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    await protocol.handshake(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 325, in handshake
+    raise InvalidStatusCode(status_code, response_headers)
+websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 404
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:09:41Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+postgresql                    waiting    0/3  postgresql           14/edge      459  no       agent initialising
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/edge  216  no       installing agent
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+postgresql-test-app/0  waiting   allocating  3        10.158.45.228          waiting for machine
+postgresql/0*          waiting   allocating  0        10.158.45.39           agent initialising
+postgresql/1           waiting   allocating  1        10.158.45.185          agent initialising
+postgresql/2           waiting   allocating  2        10.158.45.167          waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.158.45.39   juju-f70631-0  ubuntu@22.04      Running
+1        started  10.158.45.185  juju-f70631-1  ubuntu@22.04      Running
+2        pending  10.158.45.167  juju-f70631-2  ubuntu@22.04      Running
+3        pending  10.158.45.228  juju-f70631-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:08:58 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:08:58 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:09:01 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:09:03 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:09:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:09:41 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:09:41 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:09:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app-0: 02:09:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

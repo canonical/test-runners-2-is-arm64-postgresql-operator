@@ -1,0 +1,44 @@
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-1891' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=JujuConnectionError('Unable to connect to any endpoint: 10.60.154.212:17070')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 832, in _connect
+    raise errors.JujuConnectionError(
+juju.errors.JujuConnectionError: Unable to connect to any endpoint: 10.60.154.212:17070
+[31m[1mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:11:35Z
+
+App         Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           waiting    0/3  postgresql             0  no       waiting for machine
+
+Unit          Workload  Agent       Machine  Public address  Ports  Message
+postgresql/0  waiting   allocating  0        10.60.154.223          waiting for machine
+postgresql/1  waiting   allocating  1        10.60.154.172          waiting for machine
+postgresql/2  waiting   allocating  2        10.60.154.101          waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        pending  10.60.154.223  juju-7ee442-0  ubuntu@22.04      Running
+1        pending  10.60.154.172  juju-7ee442-1  ubuntu@22.04      Running
+2        pending  10.60.154.101  juju-7ee442-2  ubuntu@22.04      Running
+
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-1895' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=JujuConnectionError('Unable to connect to any endpoint: 10.60.154.212:17070')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 832, in _connect
+    raise errors.JujuConnectionError(
+juju.errors.JujuConnectionError: Unable to connect to any endpoint: 10.60.154.212:17070
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
