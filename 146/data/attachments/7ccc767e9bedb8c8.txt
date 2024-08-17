@@ -1,0 +1,23 @@
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:25:47Z
+
+App         Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           waiting    0/3  postgresql             0  no       waiting for machine
+
+Unit          Workload  Agent       Machine  Public address  Ports  Message
+postgresql/0  waiting   allocating  0        10.80.244.75           waiting for machine
+postgresql/1  waiting   allocating  1        10.80.244.138          waiting for machine
+postgresql/2  waiting   allocating  2        10.80.244.59           waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        pending  10.80.244.75   juju-88befd-0  ubuntu@22.04      Running
+1        pending  10.80.244.138  juju-88befd-1  ubuntu@22.04      Running
+2        pending  10.80.244.59   juju-88befd-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
