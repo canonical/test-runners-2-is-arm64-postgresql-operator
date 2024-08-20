@@ -1,0 +1,291 @@
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg (waiting for exactly 3 units, current : 4)
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  pg/1 [idle] active: Primary
+  pg/2 [idle] active: 
+  pg/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+  ubuntu-advantage/0 [idle] active: Attached (esm-apps,esm-infra)
+  ubuntu-advantage/1 [idle] active: Attached (esm-apps,esm-infra)
+  ubuntu-advantage/3 [idle] active: Attached (esm-apps,esm-infra)
+  pg/1 [idle] active: Primary
+  pg/2 [idle] active: 
+  pg/3 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+  pg/1 [executing] active: 
+  pg/2 [executing] active: 
+  pg/3 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+  pg/1 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  landscape-client/0 [idle] active: Client registered!
+  landscape-client/1 [idle] active: Client registered!
+  landscape-client/3 [idle] blocked: Registration failed!
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:03:51Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           blocked      3  landscape-client  latest/edge   69  no       Registration failed!
+pg                14.12    active       3  postgresql                       0  no       
+ubuntu-advantage           active       3  ubuntu-advantage  latest/edge   98  no       Attached (esm-apps,esm-infra)
+
+Unit                   Workload  Agent  Machine  Public address  Ports     Message
+pg/1*                  active    idle   1        10.36.120.196   5432/tcp  Primary
+  landscape-client/1   active    idle            10.36.120.196             Client registered!
+  ubuntu-advantage/0*  active    idle            10.36.120.196             Attached (esm-apps,esm-infra)
+pg/2                   active    idle   2        10.36.120.220   5432/tcp  
+  landscape-client/0*  active    idle            10.36.120.220             Client registered!
+  ubuntu-advantage/1   active    idle            10.36.120.220             Attached (esm-apps,esm-infra)
+pg/3                   active    idle   3        10.36.120.121   5432/tcp  
+  landscape-client/3   blocked   idle            10.36.120.121             Registration failed!
+  ubuntu-advantage/3   active    idle            10.36.120.121             Attached (esm-apps,esm-infra)
+
+Machine  State    Address        Inst id        Base          AZ  Message
+1        started  10.36.120.196  juju-b9430a-1  ubuntu@22.04      Running
+2        started  10.36.120.220  juju-b9430a-2  ubuntu@22.04      Running
+3        started  10.36.120.121  juju-b9430a-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:53:49 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:53:49 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 02:53:50 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:54:02 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:54:02 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-0: 02:54:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:54:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:54:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 02:54:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 03:01:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 03:01:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 03:01:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 03:01:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 03:01:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 03:01:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:05:47 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 03:05:47 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-3: 03:05:47 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-3: 03:06:32 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-3: 03:06:34 ERROR juju.worker.meterstatus error running "meter-status-changed": exit status 1
+unit-landscape-client-3: 03:10:51 CRITICAL unit.landscape-client/3.juju-log   File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 215, in _on_config_changed
+    self.run_landscape_client()
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 190, in run_landscape_client
+    self.send_registration()
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 178, in send_registration
+    if process_helper([CLIENT_CONFIG_CMD, "--silent"]):
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-3: 03:10:51 CRITICAL unit.landscape-client/3.juju-log Traceback (most recent call last):
+Failure: landscape.lib.amp.MethodCallError: timeout
+
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
