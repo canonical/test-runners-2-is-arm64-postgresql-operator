@@ -1,0 +1,230 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:734 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/s3-integrator-32
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/self-signed-certificates-184
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:jammy/postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: agent initialising
+  postgresql-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: Executing restart operation
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: Primary
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:123 configuring S3 integrator for AWS
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] active: Primary
+  s3-integrator/0 [executing] blocked: Missing parameters: ['access-key', 'secret-key']
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] waiting: waiting for primary to be reachable from this unit
+  postgresql-aws/1 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: Primary
+[33mWARNING [0m juju.client.connection:connection.py:578 Receiver: Connection closed, reconnecting
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/1 [executing] active: Primary
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:144 creating a table in the database
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:153 creating a backup
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] active: Primary
+  s3-integrator/0 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] maintenance: reconfiguring cluster
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] active: 
+  postgresql-aws/1 [executing] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: Awaiting restart operation
+  postgresql-aws/1 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: Awaiting restart operation
+  postgresql-aws/1 [executing] maintenance: Executing restart operation
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: Awaiting restart operation
+  postgresql-aws/1 [executing] maintenance: Executing restart operation
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [executing] maintenance: Executing restart operation
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] active: 
+  postgresql-aws/1 [executing] maintenance: Executing restart operation
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [idle] active:
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:78 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:48:14Z
+
+App                       Version  Status       Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws            14.12    maintenance      2  postgresql                                 0  no       Beginning rolling restart
+s3-integrator                      active           1  s3-integrator             latest/stable   32  no       
+self-signed-certificates           active           1  self-signed-certificates  latest/edge    184  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports     Message
+postgresql-aws/0             active    executing  2        10.102.227.122  5432/tcp  
+postgresql-aws/1*            active    executing  3        10.102.227.23   5432/tcp  
+s3-integrator/0*             active    idle       0        10.102.227.95             
+self-signed-certificates/0*  active    idle       1        10.102.227.208            
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.102.227.95   juju-0f274e-0  ubuntu@22.04      Running
+1        started  10.102.227.208  juju-0f274e-1  ubuntu@22.04      Running
+2        started  10.102.227.122  juju-0f274e-2  ubuntu@22.04      Running
+3        started  10.102.227.23   juju-0f274e-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:14:59 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:14:59 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 02:15:00 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:15:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:15:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 02:15:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:16:13 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:16:13 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 02:16:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:16:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:16:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-0: 02:16:14 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-1: 02:33:19 ERROR unit.postgresql-aws/1.juju-log Failed to list PostgreSQL database users: connection to server at "10.102.227.23", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+unit-s3-integrator-0: 02:41:22 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-postgresql-aws-0: 02:47:11 ERROR unit.postgresql-aws/0.juju-log database-peers:1: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-aws-0/charm/./src/charm.py", line 564, in _on_peer_relation_changed
+    or int(self._patroni.member_replication_lag) > 1000
+ValueError: invalid literal for int() with base 10: 'unknown'
+unit-postgresql-aws-0: 02:47:11 ERROR juju.worker.uniter.operation hook "database-peers-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-aws-1: 02:47:25 ERROR unit.postgresql-aws/1.juju-log Failed to list PostgreSQL database users: could not translate host name "None" to address: Temporary failure in name resolution
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

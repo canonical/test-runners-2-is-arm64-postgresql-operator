@@ -1,0 +1,217 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:43:10Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           unknown      0  landscape-client  latest/edge   69  no       
+pg                14.12    active     0/3  postgresql                       0  no       
+ubuntu-advantage           unknown      0  ubuntu-advantage  latest/edge   98  no       
+
+Unit  Workload  Agent  Machine  Public address  Ports     Message
+pg/0  unknown   lost   0        10.75.162.105   5432/tcp  agent lost, see 'juju show-status-log pg/0'
+pg/1  unknown   lost   1        10.75.162.63    5432/tcp  agent lost, see 'juju show-status-log pg/1'
+pg/2  unknown   lost   2        10.75.162.55    5432/tcp  agent lost, see 'juju show-status-log pg/2'
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        down     10.75.162.105  juju-db0411-0  ubuntu@22.04      Running
+1        error    10.75.162.63   juju-db0411-1  ubuntu@22.04      cannot upgrade machine's lxd profile: 1: Failed to begin transaction: failed to create dqlite connection: no availabl...
+2        started  10.75.162.55   juju-db0411-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 03:26:23 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 03:26:23 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 03:26:23 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:26:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:26:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:26:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:26:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 03:26:27 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-0: 03:26:27 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-2: 03:29:47 ERROR unit.pg/2.juju-log database-peers:1: failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 307, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-pg-2/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "10.75.162.55", port 5432 failed: timeout expired
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-pg-2/charm/./src/charm.py", line 1015, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-pg-2/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 331, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-pg-2: 03:39:56 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+machine-2: 03:40:01 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.75.162.55:40952: use of closed network connection
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:01 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 03:40:03 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.75.162.105:45934: use of closed network connection
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:03 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:45944->10.75.162.168:17070: write: broken pipe
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:45944->10.75.162.168:17070: write: broken pipe
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:45944->10.75.162.168:17070: write: broken pipe
+machine-0: 03:40:04 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-0: 03:40:04 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:40:09 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:40:16 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:40:17 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:40:17 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 03:40:18 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:40:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:40:25 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:40:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-1: 03:40:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:40:30 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:40:31 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:40:32 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:40:34 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:40:37 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:40:37 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:40:38 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:40:43 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:41:20 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: watching block devices: creating environ for model "test" (0e76184e-63cd-419d-8bb4-b30c48db0411): Cannot fetch node config from database: context deadline exceeded
+controller-0: 03:41:32 ERROR juju.worker.instancemutater.environ cannot upgrade machine-1 lxd profiles: 1: Failed to begin transaction: failed to create dqlite connection: no available dqlite leader server found
+machine-0: 03:41:32 ERROR juju.worker.dependency "broker-tracker" manifold worker returned unexpected error: cannot load machine machine-0 from state: creating environ for model "test" (0e76184e-63cd-419d-8bb4-b30c48db0411): Failed to begin transaction: context deadline exceeded
+unit-pg-2: 03:42:07 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+unit-pg-0: 03:42:11 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while pg/0 waiting for pg leadership release: error blocking on leadership release: lease manager stopped
+unit-pg-2: 03:42:15 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: leadership failure: lease manager stopped
+unit-pg-1: 03:42:15 ERROR juju.worker.dependency "leadership-tracker" manifold worker returned unexpected error: error while pg/1 waiting for pg leadership release: error blocking on leadership release: lease manager stopped
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.worker.dependency "machiner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "instance-mutater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "state-converter" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "fan-configurer" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "reboot-executor" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "api-address-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "valid-credential-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "upgrade-series" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: websocket: close sent
+machine-2: 03:42:21 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "deployer" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:42:21 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: write tcp 10.75.162.105:47920->10.75.162.168:17070: i/o timeout
+machine-0: 03:42:21 ERROR juju.worker.dependency "migration-minion" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:42:21 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1006 (abnormal closure): unexpected EOF: set tcp 10.75.162.63:37724: use of closed network connection
+machine-1: 03:42:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:42:21 ERROR juju.worker.dependency "logging-config-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:42:21 ERROR juju.worker.dependency "machine-action-runner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:42:21 ERROR juju.worker.dependency "ssh-authkeys-updater" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-1: 03:42:21 ERROR juju.worker.dependency "storage-provisioner" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-2: 03:42:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-1: 03:42:21 ERROR juju.worker.dependency "migration-inactive-flag" manifold worker returned unexpected error: watcher has been stopped (stopped)
+machine-0: 03:42:21 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:48226->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:48226->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:48226->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:48226->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:48226->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-0: 03:42:21 ERROR juju.api.watcher error trying to stop watcher: codec.ReadHeader error: error receiving message: write tcp 10.75.162.105:34990->10.75.162.168:17070: write: connection reset by peer
+machine-1: 03:42:22 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: api connection broken unexpectedly
+machine-2: 03:42:25 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:42:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:42:27 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:42:29 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:42:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:42:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:42:33 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-2: 03:42:46 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-2" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-1: 03:42:46 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:42:47 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: connect: connection refused
+machine-0: 03:42:56 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-0" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: i/o timeout
+machine-1: 03:42:57 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [0e7618] "machine-1" cannot open api: unable to connect to API: dial tcp 10.75.162.168:17070: i/o timeout
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
