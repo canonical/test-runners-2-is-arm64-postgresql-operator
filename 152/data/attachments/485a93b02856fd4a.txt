@@ -1,0 +1,26 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  01:50:51Z
+
+App             Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+first-cluster            waiting    0/3  postgresql             0  no       waiting for machine
+second-cluster           waiting    0/1  postgresql             1  no       waiting for machine
+
+Unit              Workload  Agent       Machine  Public address  Ports  Message
+first-cluster/0   waiting   allocating  0        10.195.159.102         waiting for machine
+first-cluster/1   waiting   allocating  1        10.195.159.19          waiting for machine
+first-cluster/2   waiting   allocating  2        10.195.159.147         waiting for machine
+second-cluster/0  waiting   allocating  3        10.195.159.149         waiting for machine
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        pending  10.195.159.102  juju-21b4e5-0  ubuntu@22.04      Running
+1        pending  10.195.159.19   juju-21b4e5-1  ubuntu@22.04      Running
+2        pending  10.195.159.147  juju-21b4e5-2  ubuntu@22.04      Running
+3        pending  10.195.159.149  juju-21b4e5-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 01:50:46 ERROR juju.worker.cleaner cannot cleanup state: reading cleanup document: write tcp 127.0.0.1:33476->127.0.0.1:37017: i/o timeout
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

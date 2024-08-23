@@ -1,0 +1,81 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:13:47Z
+
+App                   Version  Status  Scale  Charm                Channel        Rev  Exposed  Message
+mailman3-core                  active      1  mailman3-core        latest/stable   27  no       Ready (source version/commit e1d5a03)
+postgresql            14.12    active      2  postgresql                            0  no       
+postgresql-test-app            active      1  postgresql-test-app  latest/edge    230  no       
+postgresql-test-app2           active      1  postgresql-test-app  latest/edge    230  no       
+
+Unit                     Workload  Agent      Machine  Public address  Ports     Message
+mailman3-core/0*         active    idle       2        10.88.132.131   25/tcp    Ready (source version/commit e1d5a03)
+postgresql-test-app2/0*  active    executing  6        10.88.132.41              
+postgresql-test-app/0*   active    executing  5        10.88.132.149             
+postgresql/2*            blocked   executing  3        10.88.132.213   5432/tcp  extensions requested through relation, enable them through config options
+postgresql/3             active    executing  4        10.88.132.160   5432/tcp  
+
+Machine  State    Address        Inst id        Base          AZ  Message
+2        started  10.88.132.131  juju-447fca-2  ubuntu@20.04      Running
+3        started  10.88.132.213  juju-447fca-3  ubuntu@22.04      Running
+4        started  10.88.132.160  juju-447fca-4  ubuntu@22.04      Running
+5        started  10.88.132.149  juju-447fca-5  ubuntu@22.04      Running
+6        started  10.88.132.41   juju-447fca-6  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 02:27:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:27:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:27:33 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:27:43 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:27:43 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:27:43 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:33:13 ERROR unit.postgresql/1.juju-log database-peers:1: failed to change plugins: 
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 307, in enable_disable_extensions
+    with self._connect_to_database() as connection, connection.cursor() as cursor:
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 131, in _connect_to_database
+    connection = psycopg2.connect(
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "10.88.132.4", port 5432 failed: timeout expired
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1015, in enable_disable_extensions
+    self.postgresql.enable_disable_extensions(extensions, database)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/postgresql_k8s/v0/postgresql.py", line 331, in enable_disable_extensions
+    raise PostgreSQLEnableDisableExtensionError()
+charms.postgresql_k8s.v0.postgresql.PostgreSQLEnableDisableExtensionError
+unit-postgresql-1: 02:42:53 ERROR unit.postgresql/1.juju-log Failed to list PostgreSQL database users: connection to server at "10.88.132.228", port 5432 failed: timeout expired
+
+machine-2: 02:44:22 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:44:22 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-mailman3-core-0: 02:44:23 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:55:33 ERROR unit.postgresql/1.juju-log Failed to list PostgreSQL database users: connection to server at "10.88.132.228", port 5432 failed: timeout expired
+
+machine-0: 02:57:07 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: write tcp 10.88.132.228:37700->10.88.132.195:17070: i/o timeout: write tcp 10.88.132.228:37700->10.88.132.195:17070: i/o timeout
+machine-4: 02:58:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:58:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-3: 02:58:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:58:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:58:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:58:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 03:10:12 ERROR juju.api.watcher error trying to stop watcher: bad catacomb ErrDying: still alive
+unit-postgresql-2: 03:10:12 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: bad catacomb ErrDying: still alive
+machine-6: 03:12:30 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 03:12:30 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app2-0: 03:12:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 03:12:32 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 03:12:32 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 03:12:32 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 03:13:45 ERROR unit.postgresql/2.juju-log db:8: ERROR - `extensions` (pg_trgm, unaccent) cannot be requested through relations - Please enable extensions through `juju config` and add the relation again.
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
