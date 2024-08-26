@@ -1,0 +1,25 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:15:05Z
+
+App         Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           error     1/3  postgresql             0  no       hook failed: "install"
+
+Unit           Workload  Agent       Machine  Public address  Ports  Message
+postgresql/0*  error     idle        0        10.83.48.153           hook failed: "install"
+postgresql/1   waiting   allocating  1        10.83.48.247           waiting for machine
+postgresql/2   waiting   allocating  2        10.83.48.59            waiting for machine
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.83.48.153  juju-9beab5-0  ubuntu@22.04      Running
+1        pending  10.83.48.247  juju-9beab5-1  ubuntu@22.04      Running
+2        pending  10.83.48.59   juju-9beab5-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:14:19 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:14:19 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:14:19 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

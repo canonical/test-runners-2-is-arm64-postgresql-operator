@@ -1,0 +1,249 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:32:34Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           blocked      3  landscape-client  latest/edge   69  no       Failed to add PPA!
+pg                14.12    active       3  postgresql                       0  no       
+ubuntu-advantage           active       3  ubuntu-advantage  latest/edge   98  no       Attached (esm-apps,esm-infra)
+
+Unit                   Workload  Agent  Machine  Public address  Ports     Message
+pg/0*                  active    idle   0        10.99.147.113   5432/tcp  Primary
+  landscape-client/2*  blocked   idle            10.99.147.113             Failed to add PPA!
+  ubuntu-advantage/1*  active    idle            10.99.147.113             Attached (esm-apps,esm-infra)
+pg/1                   active    idle   1        10.99.147.63    5432/tcp  
+  landscape-client/1   blocked   idle            10.99.147.63              Failed to add PPA!
+  ubuntu-advantage/0   active    idle            10.99.147.63              Attached (esm-apps,esm-infra)
+pg/2                   active    idle   2        10.99.147.79    5432/tcp  
+  landscape-client/3   blocked   idle            10.99.147.79              Failed to add PPA!
+  ubuntu-advantage/2   active    idle            10.99.147.79              Attached (esm-apps,esm-infra)
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.99.147.113  juju-80a31e-0  ubuntu@22.04      Running
+1        started  10.99.147.63   juju-80a31e-1  ubuntu@22.04      Running
+2        started  10.99.147.79   juju-80a31e-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+unit-pg-0: 02:16:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-1: 02:16:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:16:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:16:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:16:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:16:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:16:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:16:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 02:16:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-3: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 02:22:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 02:24:57 CRITICAL unit.landscape-client/1.juju-log   File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 194, in _on_install
+    self.add_ppa()
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 145, in add_ppa
+    if not process_helper(["add-apt-repository", "-y", landscape_ppa]):
+  File "/var/lib/juju/agents/unit-landscape-client-1/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-3: 02:24:57 CRITICAL unit.landscape-client/3.juju-log   File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 194, in _on_install
+    self.add_ppa()
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 145, in add_ppa
+    if not process_helper(["add-apt-repository", "-y", landscape_ppa]):
+  File "/var/lib/juju/agents/unit-landscape-client-3/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-1: 02:24:57 CRITICAL unit.landscape-client/1.juju-log Traceback (most recent call last):
+  File "/usr/bin/add-apt-repository", line 364, in <module>
+    sys.exit(0 if addaptrepo.main() else 1)
+  File "/usr/bin/add-apt-repository", line 347, in main
+    shortcut = handler(source, **shortcut_params)
+  File "/usr/lib/python3/dist-packages/softwareproperties/shortcuts.py", line 40, in shortcut_handler
+    return handler(shortcut, **kwargs)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 82, in __init__
+    if self.lpppa.publish_debug_symbols:
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 120, in lpppa
+    self._lpppa = self.lpteam.getPPAByName(name=self.ppaname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 107, in lpteam
+    self._lpteam = self.lp.people(self.teamname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 98, in lp
+    self._lp = login_func("%s.%s" % (self.__module__, self.__class__.__name__),
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 494, in login_anonymously
+    return cls(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 230, in __init__
+    super(Launchpad, self).__init__(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/resource.py", line 472, in __init__
+    self._wadl = self._browser.get_wadl_application(self._root_uri)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 447, in get_wadl_application
+    response, content = self._request(url, media_type=wadl_type)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 389, in _request
+    response, content = self._request_and_retry(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 359, in _request_and_retry
+    response, content = self._connection.request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1725, in request
+    (response, content) = self._request(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 144, in _request
+    response, content = super(LaunchpadOAuthAwareHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 184, in _request
+    return super(RestfulHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1441, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1363, in _conn_request
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1155, in connect
+    self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+unit-landscape-client-3: 02:24:57 CRITICAL unit.landscape-client/3.juju-log Traceback (most recent call last):
+  File "/usr/bin/add-apt-repository", line 364, in <module>
+    sys.exit(0 if addaptrepo.main() else 1)
+  File "/usr/bin/add-apt-repository", line 347, in main
+    shortcut = handler(source, **shortcut_params)
+  File "/usr/lib/python3/dist-packages/softwareproperties/shortcuts.py", line 40, in shortcut_handler
+    return handler(shortcut, **kwargs)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 82, in __init__
+    if self.lpppa.publish_debug_symbols:
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 120, in lpppa
+    self._lpppa = self.lpteam.getPPAByName(name=self.ppaname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 107, in lpteam
+    self._lpteam = self.lp.people(self.teamname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 98, in lp
+    self._lp = login_func("%s.%s" % (self.__module__, self.__class__.__name__),
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 494, in login_anonymously
+    return cls(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 230, in __init__
+    super(Launchpad, self).__init__(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/resource.py", line 472, in __init__
+    self._wadl = self._browser.get_wadl_application(self._root_uri)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 447, in get_wadl_application
+    response, content = self._request(url, media_type=wadl_type)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 389, in _request
+    response, content = self._request_and_retry(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 359, in _request_and_retry
+    response, content = self._connection.request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1725, in request
+    (response, content) = self._request(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 144, in _request
+    response, content = super(LaunchpadOAuthAwareHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 184, in _request
+    return super(RestfulHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1441, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1363, in _conn_request
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1155, in connect
+    self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+unit-landscape-client-2: 02:24:57 CRITICAL unit.landscape-client/2.juju-log   File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 261, in <module>
+    main(LandscapeClientCharm)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/main.py", line 436, in main
+    _emit_charm_event(charm, dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/main.py", line 144, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 351, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/venv/ops/framework.py", line 942, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 194, in _on_install
+    self.add_ppa()
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 145, in add_ppa
+    if not process_helper(["add-apt-repository", "-y", landscape_ppa]):
+  File "/var/lib/juju/agents/unit-landscape-client-2/charm/./src/charm.py", line 104, in process_helper
+    log_error("".join(traceback.format_stack()))
+
+unit-landscape-client-2: 02:24:57 CRITICAL unit.landscape-client/2.juju-log Traceback (most recent call last):
+  File "/usr/bin/add-apt-repository", line 364, in <module>
+    sys.exit(0 if addaptrepo.main() else 1)
+  File "/usr/bin/add-apt-repository", line 347, in main
+    shortcut = handler(source, **shortcut_params)
+  File "/usr/lib/python3/dist-packages/softwareproperties/shortcuts.py", line 40, in shortcut_handler
+    return handler(shortcut, **kwargs)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 82, in __init__
+    if self.lpppa.publish_debug_symbols:
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 120, in lpppa
+    self._lpppa = self.lpteam.getPPAByName(name=self.ppaname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 107, in lpteam
+    self._lpteam = self.lp.people(self.teamname)
+  File "/usr/lib/python3/dist-packages/softwareproperties/ppa.py", line 98, in lp
+    self._lp = login_func("%s.%s" % (self.__module__, self.__class__.__name__),
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 494, in login_anonymously
+    return cls(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 230, in __init__
+    super(Launchpad, self).__init__(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/resource.py", line 472, in __init__
+    self._wadl = self._browser.get_wadl_application(self._root_uri)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 447, in get_wadl_application
+    response, content = self._request(url, media_type=wadl_type)
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 389, in _request
+    response, content = self._request_and_retry(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 359, in _request_and_retry
+    response, content = self._connection.request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1725, in request
+    (response, content) = self._request(
+  File "/usr/lib/python3/dist-packages/launchpadlib/launchpad.py", line 144, in _request
+    response, content = super(LaunchpadOAuthAwareHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/lazr/restfulclient/_browser.py", line 184, in _request
+    return super(RestfulHttp, self)._request(
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1441, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1363, in _conn_request
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/httplib2/__init__.py", line 1155, in connect
+    self.sock = self._context.wrap_socket(sock, server_hostname=self.host)
+  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/usr/lib/python3.10/ssl.py", line 1100, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.10/ssl.py", line 1371, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)
+
+unit-ubuntu-advantage-2: 02:25:38 ERROR unit.ubuntu-advantage/2.juju-log Error running attach. stderr Failed to attach machine. See https://ubuntu.com/pro/dashboard
+
+stdout: 
+unit-landscape-client-3: 02:26:10 CRITICAL unit.landscape-client/3.juju-log Landscape client package not installed.
+unit-landscape-client-1: 02:26:15 CRITICAL unit.landscape-client/1.juju-log Landscape client package not installed.
+unit-landscape-client-2: 02:26:16 CRITICAL unit.landscape-client/2.juju-log Landscape client package not installed.
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
