@@ -1,0 +1,57 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:54:50Z
+
+App                   Version  Status  Scale  Charm                Channel        Rev  Exposed  Message
+mailman3-core                  active      1  mailman3-core        latest/stable   27  no       Ready (source version/commit e1d5a03)
+postgresql            14.12    active      2  postgresql                            0  no       
+postgresql-test-app            active      1  postgresql-test-app  latest/edge    236  no       
+postgresql-test-app2           active      1  postgresql-test-app  latest/edge    236  no       
+
+Unit                     Workload  Agent      Machine  Public address  Ports     Message
+mailman3-core/0*         active    idle       2        10.114.166.203  25/tcp    Ready (source version/commit e1d5a03)
+postgresql-test-app2/0*  active    executing  6        10.114.166.229            
+postgresql-test-app/0*   active    executing  5        10.114.166.64             
+postgresql/2*            blocked   executing  3        10.114.166.165  5432/tcp  extensions requested through relation, enable them through config options
+postgresql/3             active    executing  4        10.114.166.78   5432/tcp  
+
+Machine  State    Address         Inst id        Base          AZ  Message
+2        started  10.114.166.203  juju-dfda60-2  ubuntu@20.04      Running
+3        started  10.114.166.165  juju-dfda60-3  ubuntu@22.04      Running
+4        started  10.114.166.78   juju-dfda60-4  ubuntu@22.04      Running
+5        started  10.114.166.64   juju-dfda60-5  ubuntu@22.04      Running
+6        started  10.114.166.229  juju-dfda60-6  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:20:43 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:20:43 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:20:44 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:20:44 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:20:44 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:20:44 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:25:35 ERROR unit.postgresql/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.114.166.30", port 5432 failed: timeout expired
+
+machine-2: 02:29:02 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:29:02 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-mailman3-core-0: 02:29:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:32:11 ERROR unit.postgresql/0.juju-log Failed to list PostgreSQL database users: connection to server at "10.114.166.30", port 5432 failed: timeout expired
+
+machine-3: 02:40:12 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:40:12 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:40:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 02:40:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:40:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-3: 02:40:17 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 02:53:31 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 02:53:31 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app2-0: 02:53:31 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 02:53:35 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 02:53:35 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 02:53:35 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-test-app2-0: 02:54:08 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "9617e126-f460-4483-867d-25ea69dfda60:r#7#postgresql": settings 9617e126-f460-4483-867d-25ea69dfda60:r#7#postgresql not found (not found)
+unit-postgresql-3: 02:54:08 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "9617e126-f460-4483-867d-25ea69dfda60:r#7#postgresql-test-app2": settings 9617e126-f460-4483-867d-25ea69dfda60:r#7#postgresql-test-app2 not found (not found)
+unit-postgresql-2: 02:54:48 ERROR unit.postgresql/2.juju-log db:9: ERROR - `extensions` (pg_trgm, unaccent) cannot be requested through relations - Please enable extensions through `juju config` and add the relation again.
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
