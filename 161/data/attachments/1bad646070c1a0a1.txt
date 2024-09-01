@@ -1,0 +1,41 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:46:36Z
+
+App                       Version  Status  Scale  Charm                     Channel      Rev  Exposed  Message
+postgresql                14.12    active      3  postgresql                               0  no       
+self-signed-certificates           active      1  self-signed-certificates  latest/edge  186  no       
+
+Unit                         Workload  Agent  Machine  Public address  Ports     Message
+postgresql/0                 active    idle   0        10.153.131.116  5432/tcp  
+postgresql/1*                active    idle   1        10.153.131.73   5432/tcp  
+postgresql/2                 active    idle   2        10.153.131.60   5432/tcp  Primary
+self-signed-certificates/0*  active    idle   3        10.153.131.77             
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.153.131.116  juju-d229b0-0  ubuntu@22.04      Running
+1        started  10.153.131.73   juju-d229b0-1  ubuntu@22.04      Running
+2        started  10.153.131.60   juju-d229b0-2  ubuntu@22.04      Running
+3        started  10.153.131.77   juju-d229b0-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 02:28:35 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:28:35 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:28:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:28:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:28:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:28:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:28:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:28:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:28:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 02:28:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-0: 02:28:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-self-signed-certificates-0: 02:28:36 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 02:30:47 ERROR unit.postgresql/1.juju-log restart:1: Failed to list PostgreSQL database users: connection to server at "10.153.131.73", port 5432 failed: timeout expired
+
+unit-self-signed-certificates-0: 02:32:35 ERROR juju.worker.dependency "log-sender" manifold worker returned unexpected error: sending log message: websocket: close 1005 (no status): websocket: close sent
+unit-postgresql-1: 02:44:47 ERROR juju.worker.dependency "uniter" manifold worker returned unexpected error: relation scope id "a412e203-2af5-499e-8487-87beb2d229b0:r#3#self-signed-certificates": settings a412e203-2af5-499e-8487-87beb2d229b0:r#3#self-signed-certificates not found (not found)
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
