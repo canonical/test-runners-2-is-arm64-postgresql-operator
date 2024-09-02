@@ -1,0 +1,27 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:21:30Z
+
+App                       Version  Status   Scale  Charm                     Channel      Rev  Exposed  Message
+postgresql                         waiting    0/3  postgresql                               0  no       waiting for machine
+self-signed-certificates           waiting    0/1  self-signed-certificates  latest/edge  186  no       waiting for machine
+
+Unit                        Workload  Agent       Machine  Public address  Ports  Message
+postgresql/0                waiting   allocating  0                               waiting for machine
+postgresql/1                waiting   allocating  1                               waiting for machine
+postgresql/2                waiting   allocating  2                               waiting for machine
+self-signed-certificates/0  waiting   allocating  3                               waiting for machine
+
+Machine  State    Address  Inst id  Base          AZ  Message
+0        pending           pending  ubuntu@22.04      Creating container
+1        pending           pending  ubuntu@22.04      Creating container
+2        pending           pending  ubuntu@22.04      Creating container
+3        pending           pending  ubuntu@22.04      Creating container
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 02:20:48 ERROR juju.worker.provisioner worker 11: shutting down pool due to error while handling a "start-instance 0" task: catacomb 0x40024dd0c0 is dying
+controller-0: 02:20:49 ERROR juju.worker.provisioner worker 0: shutting down pool due to error while handling a "start-instance 1" task: catacomb 0x40024dd0c0 is dying
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...

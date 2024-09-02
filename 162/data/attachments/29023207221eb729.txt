@@ -1,0 +1,49 @@
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-307' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=InvalidStatusCode(404, Headers([('Content-Type', 'text/plain; charset=utf-8'), ('X-Content-Type-Options', 'nosniff'), ('Date', 'Mon, 02 Sep 2024 02:20:13 GMT'), ('Content-Length', '19'), ('Connection', 'close')]))>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 817, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 806, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 427, in _open
+    return (await websockets.connect(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 647, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 654, in __await_impl__
+    await protocol.handshake(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 325, in handshake
+    raise InvalidStatusCode(status_code, response_headers)
+websockets.exceptions.InvalidStatusCode: server rejected WebSocket connection: HTTP 404
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:22:07Z
+
+App         Version  Status   Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           waiting    0/3  postgresql             0  no       waiting for machine
+
+Unit          Workload  Agent       Machine  Public address  Ports  Message
+postgresql/0  waiting   allocating  0                               waiting for machine
+postgresql/1  waiting   allocating  1                               waiting for machine
+postgresql/2  waiting   allocating  2                               waiting for machine
+
+Machine  State    Address  Inst id        Base          AZ  Message
+0        pending           juju-c0ed7a-0  ubuntu@22.04      Container started
+1        pending           juju-c0ed7a-1  ubuntu@22.04      Container started
+2        pending           juju-c0ed7a-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 02:20:11 ERROR juju.worker.instancemutater.environ cannot upgrade machine-0 lxd profiles: 0: Failed to begin transaction: context deadline exceeded
+controller-0: 02:20:11 ERROR juju.worker.instancemutater.environ cannot upgrade machine-1 lxd profiles: 1: Failed to begin transaction: context deadline exceeded
+controller-0: 02:20:11 ERROR juju.worker.instancemutater.environ cannot set modification status of machine "0" error: connection is shut down
+controller-0: 02:20:12 ERROR juju.worker.instancemutater.environ cannot set modification status of machine "1" error: connection is shut down
+controller-0: 02:20:12 ERROR juju.worker.instancemutater.environ cannot reset modification status of machine "2" applied: connection is shut down
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
