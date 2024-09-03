@@ -1,0 +1,60 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:26:32Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+another-application           active      1  postgresql-test-app  latest/edge  238  no       
+another-database     14.12    active      2  postgresql                          0  no       
+database             14.12    active      2  postgresql                          1  no       
+postgresql-test-app           active      2  postgresql-test-app  latest/edge  238  no       received database credentials of the second database
+
+Unit                    Workload  Agent  Machine  Public address  Ports     Message
+another-application/0*  active    idle   6        10.54.73.125              
+another-database/0      active    idle   3        10.54.73.70     5432/tcp  
+another-database/1*     active    idle   4        10.54.73.202    5432/tcp  Primary
+database/2*             active    idle   7        10.54.73.74     5432/tcp  Primary
+database/3              active    idle   8        10.54.73.122    5432/tcp  
+postgresql-test-app/0*  active    idle   0        10.54.73.69               received database credentials of the second database
+postgresql-test-app/1   active    idle   1        10.54.73.141              received database credentials of the second database
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.54.73.69   juju-259189-0  ubuntu@22.04      Running
+1        started  10.54.73.141  juju-259189-1  ubuntu@22.04      Running
+3        started  10.54.73.70   juju-259189-3  ubuntu@22.04      Running
+4        started  10.54.73.202  juju-259189-4  ubuntu@22.04      Running
+6        started  10.54.73.125  juju-259189-6  ubuntu@22.04      Running
+7        started  10.54.73.74   juju-259189-7  ubuntu@22.04      Running
+8        started  10.54.73.122  juju-259189-8  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 02:57:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:57:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 02:57:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:57:45 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:57:45 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-1: 02:57:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 02:58:00 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 02:58:00 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-1: 02:58:01 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:58:04 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:58:04 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-0: 02:58:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:58:56 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:58:56 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-database-0: 02:58:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 03:06:03 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 03:06:03 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-1: 03:06:04 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 03:14:11 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 03:14:11 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-another-application-0: 03:14:11 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-8: 03:17:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-8: 03:17:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 03:17:42 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 03:17:42 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-3: 03:17:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-database-2: 03:17:42 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
