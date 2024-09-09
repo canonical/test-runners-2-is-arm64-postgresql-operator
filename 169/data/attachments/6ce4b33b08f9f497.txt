@@ -1,0 +1,44 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[33mWARNING [0m juju.client.connection:connection.py:654 RPC: Connection closed, reconnecting
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  02:11:22Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Exposed  Message
+data-integrator               waiting    0/1  data-integrator      latest/edge     42  no       waiting for machine
+postgresql                    waiting    0/3  postgresql                            0  no       waiting for machine
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/stable  210  no       waiting for machine
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+data-integrator/0      waiting   allocating  3        10.235.168.161         waiting for machine
+postgresql-test-app/0  waiting   allocating  4        10.235.168.64          waiting for machine
+postgresql/0           waiting   allocating  0        10.235.168.202         waiting for machine
+postgresql/1           waiting   allocating  1        10.235.168.174         waiting for machine
+postgresql/2           waiting   allocating  2        10.235.168.231         waiting for machine
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        pending  10.235.168.202  juju-26720a-0  ubuntu@22.04      Running
+1        pending  10.235.168.174  juju-26720a-1  ubuntu@22.04      Running
+2        pending  10.235.168.231  juju-26720a-2  ubuntu@22.04      Running
+3        pending  10.235.168.161  juju-26720a-3  ubuntu@22.04      Running
+4        pending  10.235.168.64   juju-26720a-4  ubuntu@22.04      Running
+
+[1m[31mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-6735' coro=<Connection.reconnect() done, defined at /home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:779> exception=JujuConnectionError('Unable to connect to any endpoint: 10.235.168.18:17070')>
+Traceback (most recent call last):
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 788, in reconnect
+    res = await connector(
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 868, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/ubuntu/actions-runner/_work/test-runners-2-is-arm64-postgresql-operator/test-runners-2-is-arm64-postgresql-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 832, in _connect
+    raise errors.JujuConnectionError(
+juju.errors.JujuConnectionError: Unable to connect to any endpoint: 10.235.168.18:17070
+[1m[31mERROR   [0m juju.client.connection:connection.py:662 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+controller-0: 02:11:59 ERROR juju.worker.instancemutater.environ cannot upgrade machine-2 lxd profiles: 2: Failed to begin transaction: context deadline exceeded
+controller-0: 02:11:59 ERROR juju.worker.instancemutater.environ cannot upgrade machine-4 lxd profiles: 4: Failed to begin transaction: context deadline exceeded
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
