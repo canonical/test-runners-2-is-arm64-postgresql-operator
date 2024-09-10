@@ -1,0 +1,33 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  03:49:23Z
+
+App           Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+database-app           active       1  postgresql-test-app  latest/edge  238  no       
+db-app                 waiting    0/1  postgresql-test-app  latest/edge  238  no       agent initialising
+postgresql             waiting    0/1  postgresql                          0  no       waiting for machine
+
+Unit             Workload  Agent       Machine  Public address  Ports  Message
+database-app/0*  active    idle        0        10.170.32.137          
+db-app/0*        waiting   allocating  1        10.170.32.224          agent initialising
+postgresql/0     waiting   allocating  2        10.170.32.76           waiting for machine
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.170.32.137  juju-ffe93e-0  ubuntu@22.04      Running
+1        started  10.170.32.224  juju-ffe93e-1  ubuntu@22.04      Running
+2        pending  10.170.32.76   juju-ffe93e-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 03:47:48 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f55558] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 03:47:53 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f55558] "machine-0" cannot open api: unable to connect to API: apiserver shutdown in progress (Service Unavailable)
+machine-0: 03:47:58 ERROR juju.worker.dependency "api-caller" manifold worker returned unexpected error: [f55558] "machine-0" cannot open api: unable to connect to API: dial tcp 10.170.32.133:17070: connect: connection refused
+machine-0: 03:48:07 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 03:48:07 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-database-app-0: 03:48:08 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 03:49:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 03:49:09 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-db-app-0: 03:49:12 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
