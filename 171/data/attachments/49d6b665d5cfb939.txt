@@ -1,0 +1,91 @@
+[32mINFO    [0m integration.test_charm:test_charm.py:308 connecting to primary postgresql/5 on 10.110.208.58
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: 
+  postgresql/5 [idle] active: Primary
+  postgresql/6 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: Primary
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: Primary
+  postgresql/6 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: Primary
+  postgresql/6 [idle] active: 
+  postgresql/7 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/7 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/7 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/7 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/7 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [executing] active: Primary
+  postgresql/6 [executing] maintenance: reconfiguring cluster
+  postgresql/7 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [executing] active: Primary
+  postgresql/6 [executing] maintenance: reconfiguring cluster
+  postgresql/7 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [executing] active: Primary
+  postgresql/6 [executing] maintenance: reconfiguring cluster
+  postgresql/7 [executing] waiting: waiting to start PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: Primary
+  postgresql/6 [executing] active: 
+  postgresql/7 [executing] waiting: waiting for primary to be reachable from this unit
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/3 [idle] active: Primary
+  postgresql/6 [executing] active: 
+  postgresql/7 [executing] active: 
+[32mINFO    [0m integration.test_charm:test_charm.py:328 connecting to the database host: 10.110.208.17
+[32mINFO    [0m integration.test_charm:test_charm.py:328 connecting to the database host: 10.110.208.60
+[32mINFO    [0m integration.test_charm:test_charm.py:328 connecting to the database host: 10.110.208.169
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  11:17:48Z
+
+App         Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql  14.12    active      3  postgresql             0  no       
+
+Unit           Workload  Agent  Machine  Public address  Ports     Message
+postgresql/3   active    idle   3        10.110.208.17   5432/tcp  Primary
+postgresql/6*  active    idle   6        10.110.208.60   5432/tcp  
+postgresql/7   active    idle   7        10.110.208.169  5432/tcp  
+
+Machine  State    Address         Inst id        Base          AZ  Message
+3        started  10.110.208.17   juju-e7d98e-3  ubuntu@22.04      Running
+6        started  10.110.208.60   juju-e7d98e-6  ubuntu@22.04      Running
+7        started  10.110.208.169  juju-e7d98e-7  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-0: 10:41:33 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 10:41:33 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 10:41:33 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 10:41:33 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 10:41:33 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 10:41:34 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 10:41:40 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 10:41:40 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 10:41:40 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 10:53:51 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 10:53:51 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-4: 10:53:51 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 10:53:56 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 10:53:56 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-3: 10:53:56 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-6: 11:04:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-6: 11:04:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-5: 11:04:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-6: 11:04:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-5: 11:04:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-5: 11:04:26 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-7: 11:14:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-7: 11:14:21 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-7: 11:14:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
