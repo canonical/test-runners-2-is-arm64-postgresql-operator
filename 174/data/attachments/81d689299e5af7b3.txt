@@ -1,0 +1,44 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  04:02:10Z
+
+App                  Version  Status   Scale  Charm                Channel        Rev  Exposed  Message
+data-integrator               blocked      1  data-integrator      latest/edge     44  no       Please relate the data-integrator with the desired product
+postgresql           14.12    waiting      3  postgresql                            0  no       awaiting for cluster to start
+postgresql-test-app           active       1  postgresql-test-app  latest/stable  210  no       
+
+Unit                    Workload  Agent      Machine  Public address  Ports     Message
+data-integrator/0*      blocked   idle       3        10.102.139.203            Please relate the data-integrator with the desired product
+postgresql-test-app/0*  active    idle       4        10.102.139.98             
+postgresql/0            waiting   executing  0        10.102.139.182  5432/tcp  awaiting for cluster to start
+postgresql/1            waiting   executing  1        10.102.139.90   5432/tcp  awaiting for cluster to start
+postgresql/2*           active    executing  2        10.102.139.111  5432/tcp  Primary
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.102.139.182  juju-689d91-0  ubuntu@22.04      Running
+1        started  10.102.139.90   juju-689d91-1  ubuntu@22.04      Running
+2        started  10.102.139.111  juju-689d91-2  ubuntu@22.04      Running
+3        started  10.102.139.203  juju-689d91-3  ubuntu@22.04      Running
+4        started  10.102.139.98   juju-689d91-4  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-2: 04:00:14 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 04:00:14 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 04:00:15 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 04:00:16 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 04:00:16 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 04:00:16 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 04:00:18 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 04:00:18 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 04:00:18 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 04:00:20 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 04:00:20 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-data-integrator-0: 04:00:20 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-4: 04:00:57 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-4: 04:00:57 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 04:00:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
