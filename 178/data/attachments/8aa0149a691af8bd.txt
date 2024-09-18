@@ -1,0 +1,77 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.4    unsupported  01:43:18Z
+
+App         Version  Status  Scale  Charm       Channel  Rev  Exposed  Message
+postgresql           error       3  postgresql             0  no       hook failed: "leader-elected"
+
+Unit           Workload  Agent      Machine  Public address  Ports  Message
+postgresql/0   waiting   executing  0        10.35.131.129          awaiting passwords generation
+postgresql/1*  error     idle       1        10.35.131.182          hook failed: "leader-elected"
+postgresql/2   waiting   executing  2        10.35.131.9            awaiting passwords generation
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.35.131.129  juju-df8f87-0  ubuntu@22.04      Running
+1        started  10.35.131.182  juju-df8f87-1  ubuntu@22.04      Running
+2        started  10.35.131.9    juju-df8f87-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:868 Juju error logs:
+
+machine-1: 01:40:48 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:40:48 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 01:40:48 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 01:40:50 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:40:50 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 01:40:51 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:41:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:41:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 01:41:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 01:43:12 ERROR unit.postgresql/1.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="121"'] failed with output = ''
+unit-postgresql-1: 01:43:17 ERROR unit.postgresql/1.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1849, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 548, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 527, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 516, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 915, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 647, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/./src/charm.py", line 1609, in update_config
+    if self.config.profile_limit_memory:
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/lib/charms/data_platform_libs/v0/data_models.py", line 200, in config
+    return self.config_type(**translated_keys)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/pydantic/main.py", line 339, in __init__
+    values, fields_set, validation_error = validate_model(__pydantic_self__.__class__, data)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/pydantic/main.py", line 1074, in validate_model
+    v_, errors_ = field.validate(value, values, loc=field.alias, cls=cls_)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/pydantic/fields.py", line 895, in validate
+    v, errors = self._apply_validators(v, values, loc, cls, self.post_validators)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/pydantic/fields.py", line 1154, in _apply_validators
+    v = validator(cls, v, values, self, self.model_config)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/venv/pydantic/class_validators.py", line 304, in <lambda>
+    return lambda cls, v, values, field, config: validator(cls, v)
+  File "/var/lib/juju/agents/unit-postgresql-1/charm/src/config.py", line 246, in response_lc_values
+    output = subprocess.check_output(["ls", "/snap/charmed-postgresql/current/usr/lib/locale"])
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ls', '/snap/charmed-postgresql/current/usr/lib/locale']' returned non-zero exit status 2.
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:947 Forgetting model main...
