@@ -1,0 +1,107 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  02:12:45Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           active       3  landscape-client  latest/edge   69  no       Client registered!
+pg                14.13    active       3  postgresql                       0  no       
+ubuntu-advantage           blocked      3  ubuntu-advantage  latest/edge  117  no       Failed running command '['ubuntu-advantage', 'attach', 'C1bipjyaJ58dLZABFCxiXrNXSrCKS']' [exit status: 2].
+stderr: Th...
+
+Unit                  Workload  Agent  Machine  Public address  Ports     Message
+pg/0                  active    idle   0        10.75.96.118    5432/tcp  
+  landscape-client/1  active    idle            10.75.96.118              Client registered!
+  ubuntu-advantage/1  blocked   idle            10.75.96.118              Failed running command '['ubuntu-advantage', 'attach', 'C1bipjyaJ58dLZABFCxiXrNXSrCKS']' [exit status: 2].
+stderr: Th...
+pg/1                   active   idle  1  10.75.96.162  5432/tcp  
+  landscape-client/0*  active   idle     10.75.96.162            Client registered!
+  ubuntu-advantage/0*  blocked  idle     10.75.96.162            Failed running command '['ubuntu-advantage', 'attach', 'C1bipjyaJ58dLZABFCxiXrNXSrCKS']' [exit status: 2].
+stderr: Th...
+pg/2*                 active   idle  2  10.75.96.173  5432/tcp  Primary
+  landscape-client/2  active   idle     10.75.96.173            Client registered!
+  ubuntu-advantage/2  blocked  idle     10.75.96.173            Failed running command '['ubuntu-advantage', 'attach', 'C1bipjyaJ58dLZABFCxiXrNXSrCKS']' [exit status: 1].
+stderr: Er...
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.75.96.118  juju-aac070-0  ubuntu@22.04      Running
+1        started  10.75.96.162  juju-aac070-1  ubuntu@22.04      Running
+2        started  10.75.96.173  juju-aac070-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-2: 01:57:03 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:57:03 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 01:57:03 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:57:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:57:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-0: 01:57:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:57:05 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:57:05 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 01:57:05 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-0: 02:02:44 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-1: 02:02:44 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-0: 02:02:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-1: 02:02:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 02:02:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-landscape-client-2: 02:02:45 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-ubuntu-advantage-2: 02:03:17 ERROR unit.ubuntu-advantage/2.juju-log Error running attach. stderr An unexpected error occurred: Remote end closed connection without response
+For more details, see the log: /var/log/ubuntu-advantage.log
+If you think this is a bug, please run: ubuntu-bug ubuntu-advantage-tools
+
+stdout: 
+unit-ubuntu-advantage-2: 02:03:49 ERROR unit.ubuntu-advantage/2.juju-log Error running attach. stderr Error connecting to /v1/context/machines/token: 500 <html>
+<head><title>500 Internal Server Error</title></head>
+<body>
+<center><h1>500 Internal Server Error</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+
+stdout: 
+unit-ubuntu-advantage-2: 02:03:51 ERROR unit.ubuntu-advantage/2.juju-log Error running attach. stderr Error connecting to /v1/context/machines/token: 500 <html>
+<head><title>500 Internal Server Error</title></head>
+<body>
+<center><h1>500 Internal Server Error</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+
+stdout: 
+unit-ubuntu-advantage-0: 02:04:30 ERROR unit.ubuntu-advantage/0.juju-log Error running attach. stderr Error connecting to /v1/contracts/cAD0c6_4IRnMcAdUOmuq-yIzGntDnt2ELCaN1usqh8tg/machine-activity/907610c457634ceeaf7b0fbe39a8d8c3: 502 <html><body><h1>502 Bad Gateway</h1>
+The server returned an invalid or incomplete response.
+</body></html>
+
+
+
+stdout: Enabling Ubuntu Pro: ESM Apps
+Ubuntu Pro: ESM Apps enabled
+Enabling Ubuntu Pro: ESM Infra
+Ubuntu Pro: ESM Infra enabled
+
+unit-ubuntu-advantage-0: 02:04:31 ERROR unit.ubuntu-advantage/0.juju-log Error running attach. stderr This machine is already attached to 'Canonical Data Platform'
+To use a different subscription first run: sudo pro detach.
+
+stdout: 
+unit-ubuntu-advantage-0: 02:04:32 ERROR unit.ubuntu-advantage/0.juju-log Error running attach. stderr This machine is already attached to 'Canonical Data Platform'
+To use a different subscription first run: sudo pro detach.
+
+stdout: 
+unit-ubuntu-advantage-1: 02:04:57 ERROR unit.ubuntu-advantage/1.juju-log Error running attach. stderr Failed to enable default services, check: sudo pro status
+
+stdout: Enabling Ubuntu Pro: ESM Apps
+Ubuntu Pro: ESM Apps enabled
+Enabling Ubuntu Pro: ESM Infra
+
+unit-ubuntu-advantage-1: 02:04:58 ERROR unit.ubuntu-advantage/1.juju-log Error running attach. stderr This machine is already attached to 'Canonical Data Platform'
+To use a different subscription first run: sudo pro detach.
+
+stdout: 
+unit-ubuntu-advantage-1: 02:05:00 ERROR unit.ubuntu-advantage/1.juju-log Error running attach. stderr This machine is already attached to 'Canonical Data Platform'
+To use a different subscription first run: sudo pro detach.
+
+stdout: 
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
