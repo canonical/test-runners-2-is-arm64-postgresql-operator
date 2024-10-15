@@ -1,0 +1,127 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:766 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/s3-integrator-32
+[32mINFO    [0m juju.model:model.py:2097 Deploying ch:arm64/jammy/self-signed-certificates-201
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:postgresql-0
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: waiting for machine
+  postgresql-aws/1 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [allocating] waiting: agent initialising
+  postgresql-aws/1 [allocating] waiting: agent initialising
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: installing PostgreSQL
+  postgresql-aws/1 [executing] maintenance: installing PostgreSQL
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] waiting: waiting to start PostgreSQL
+  postgresql-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: reconfiguring cluster
+  postgresql-aws/1 [executing] waiting: awaiting for cluster to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: 
+  postgresql-aws/1 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [idle] waiting: awaiting for member to start
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:127 configuring S3 integrator for AWS
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [executing] active: 
+  s3-integrator/0 [executing] blocked: Missing parameters: ['access-key', 'secret-key']
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: initialising stanza
+  postgresql-aws/1 [idle] active: 
+  s3-integrator/0 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] maintenance: initialising stanza
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] active: Primary
+  postgresql-aws/1 [idle] active: 
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:148 creating a table in the database
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:155 creating a backup
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [executing] active: Primary
+  postgresql-aws/1 [idle] active: 
+  s3-integrator/0 [idle] active: 
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-aws/0 [idle] active: Primary
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:165 listing the available backups
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  s3-integrator/0 [idle] active: 
+  self-signed-certificates/0 [idle] active: 
+  postgresql-aws/0 [idle] active: Primary
+  postgresql-aws/1 [idle] active: 
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:173 creating after-backup data in the database
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:210 restoring the backup with bad restore-to-time parameter
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:220 restoring the backup with unreachable restore-to-time parameter
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:225 waiting for the database charm to become blocked
+[32mINFO    [0m integration.test_backups_pitr:test_backups_pitr.py:78 deleting the previously created backups
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  02:37:06Z
+
+App                       Version  Status  Scale  Charm                     Channel        Rev  Exposed  Message
+postgresql-aws            14.13    active      1  postgresql                                 0  no       
+s3-integrator                      active      1  s3-integrator             latest/stable   32  no       
+self-signed-certificates           active      1  self-signed-certificates  latest/edge    201  no       
+
+Unit                         Workload  Agent      Machine  Public address  Ports     Message
+postgresql-aws/0*            waiting   executing  2        10.12.211.254   5432/tcp  awaiting for member to start
+s3-integrator/0*             active    idle       0        10.12.211.50              
+self-signed-certificates/0*  active    idle       1        10.12.211.188             
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.12.211.50   juju-b0dd47-0  ubuntu@22.04      Running
+1        started  10.12.211.188  juju-b0dd47-1  ubuntu@22.04      Running
+2        started  10.12.211.254  juju-b0dd47-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-0: 02:08:54 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:08:54 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-s3-integrator-0: 02:08:55 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 02:09:08 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:09:08 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-self-signed-certificates-0: 02:09:08 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:09:21 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:09:21 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-0: 02:09:22 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:09:28 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:09:28 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-aws-1: 02:09:29 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-aws-0: 02:20:07 ERROR unit.postgresql-aws/0.juju-log Restore failed: Bad restore-to-time format
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
