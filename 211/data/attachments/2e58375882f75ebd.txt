@@ -1,0 +1,36 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  01:59:32Z
+
+App               Version  Status   Scale  Charm             Channel      Rev  Exposed  Message
+landscape-client           unknown      0  landscape-client  latest/edge   69  no       
+pg                         error        3  postgresql                       0  no       hook failed: "leader-elected"
+ubuntu-advantage           unknown      0  ubuntu-advantage  latest/edge  136  no       
+
+Unit   Workload  Agent      Machine  Public address  Ports  Message
+pg/0   blocked   executing  0        10.103.24.86           (start) failed to install snap packages
+pg/1   blocked   executing  1        10.103.24.217          (start) failed to install snap packages
+pg/2*  error     idle       2        10.103.24.9            hook failed: "leader-elected"
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        started  10.103.24.86   juju-cbbc59-0  ubuntu@22.04      Running
+1        started  10.103.24.217  juju-cbbc59-1  ubuntu@22.04      Running
+2        started  10.103.24.9    juju-cbbc59-2  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-2: 01:58:53 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:58:53 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-2: 01:58:53 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:58:57 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:58:57 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-0: 01:58:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:58:58 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:58:58 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-pg-1: 01:58:59 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-pg-2: 01:59:19 ERROR unit.pg/2.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-pg-0: 01:59:23 ERROR unit.pg/0.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-pg-1: 01:59:24 ERROR unit.pg/1.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
