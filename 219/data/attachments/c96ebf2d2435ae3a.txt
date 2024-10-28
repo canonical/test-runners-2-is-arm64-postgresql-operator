@@ -1,0 +1,32 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  01:59:40Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+data-integrator               blocked      1  data-integrator      latest/edge   73  no       Please relate the data-integrator with the desired product
+postgresql                    waiting    0/3  postgresql                          0  no       waiting for machine
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/edge  272  no       waiting for machine
+
+Unit                   Workload  Agent       Machine  Public address  Ports  Message
+data-integrator/0*     blocked   idle        3        10.120.136.217         Please relate the data-integrator with the desired product
+postgresql-test-app/0  waiting   allocating  4        10.120.136.22          waiting for machine
+postgresql/0           waiting   allocating  0        10.120.136.96          waiting for machine
+postgresql/1           waiting   allocating  1        10.120.136.34          waiting for machine
+postgresql/2           waiting   allocating  2        10.120.136.243         waiting for machine
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        pending  10.120.136.96   juju-ca7624-0  ubuntu@22.04      Running
+1        pending  10.120.136.34   juju-ca7624-1  ubuntu@22.04      Running
+2        pending  10.120.136.243  juju-ca7624-2  ubuntu@22.04      Running
+3        started  10.120.136.217  juju-ca7624-3  ubuntu@22.04      Running
+4        pending  10.120.136.22   juju-ca7624-4  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-3: 01:58:26 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:58:26 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-data-integrator-0: 01:58:27 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
