@@ -1,0 +1,203 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  01:57:16Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+postgresql                    error       3  postgresql                          0  no       hook failed: "leader-elected"
+postgresql-test-app           active      1  postgresql-test-app  latest/edge  274  no       
+
+Unit                    Workload  Agent  Machine  Public address  Ports  Message
+postgresql-test-app/0*  active    idle   3        10.46.47.166           
+postgresql/0            blocked   idle   0        10.46.47.101           failed to install snap packages
+postgresql/1            blocked   idle   1        10.46.47.153           failed to install snap packages
+postgresql/2*           error     idle   2        10.46.47.98            hook failed: "leader-elected"
+
+Machine  State    Address       Inst id        Base          AZ  Message
+0        started  10.46.47.101  juju-d7e295-0  ubuntu@22.04      Running
+1        started  10.46.47.153  juju-d7e295-1  ubuntu@22.04      Running
+2        started  10.46.47.98   juju-d7e295-2  ubuntu@22.04      Running
+3        started  10.46.47.166  juju-d7e295-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-2: 01:53:36 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:53:36 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 01:53:37 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 01:53:46 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 01:53:46 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 01:53:46 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:53:57 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:53:57 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 01:53:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 01:54:13 ERROR unit.postgresql/2.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-postgresql-0: 01:54:25 ERROR unit.postgresql/0.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-postgresql-2: 01:54:26 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 925, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1634, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 606, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+AttributeError: 'NoneType' object has no attribute 'split'
+unit-postgresql-2: 01:54:26 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+machine-3: 01:54:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:54:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 01:54:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-1: 01:54:33 ERROR unit.postgresql/1.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-postgresql-0: 01:54:37 ERROR unit.postgresql/0.juju-log failed to get primary with error RetryError[<Future at 0xe25c63e80b80 state=finished raised ConnectionError>]
+unit-postgresql-2: 01:54:39 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 925, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1634, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 606, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+AttributeError: 'NoneType' object has no attribute 'split'
+unit-postgresql-2: 01:54:39 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-1: 01:54:40 ERROR unit.postgresql/1.juju-log failed to get primary with error RetryError[<Future at 0xe867c7060b50 state=finished raised ConnectionError>]
+unit-postgresql-2: 01:54:42 ERROR unit.postgresql/2.juju-log failed to get primary with error RetryError[<Future at 0xf3ef43b54be0 state=finished raised ConnectionError>]
+unit-postgresql-2: 01:54:56 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 925, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1634, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 606, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+AttributeError: 'NoneType' object has no attribute 'split'
+unit-postgresql-2: 01:54:57 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-2: 01:55:23 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 925, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1634, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 606, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+AttributeError: 'NoneType' object has no attribute 'split'
+unit-postgresql-2: 01:55:24 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+unit-postgresql-2: 01:56:10 ERROR unit.postgresql/2.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 925, in _on_leader_elected
+    self.update_config()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1634, in update_config
+    self._patroni.render_patroni_yml_file(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/cluster.py", line 606, in render_patroni_yml_file
+    version=self.get_postgresql_version().split(".")[0],
+AttributeError: 'NoneType' object has no attribute 'split'
+unit-postgresql-2: 01:56:10 ERROR juju.worker.uniter.operation hook "leader-elected" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
