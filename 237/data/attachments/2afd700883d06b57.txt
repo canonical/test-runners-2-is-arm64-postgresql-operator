@@ -1,0 +1,39 @@
+[32mINFO    [0m integration.ha_tests.test_async_replication:test_async_replication.py:86 Destroying second model
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  01:41:21Z
+
+App                  Version  Status   Scale  Charm                Channel      Rev  Exposed  Message
+data-integrator               blocked      1  data-integrator      latest/edge   75  no       Please relate the data-integrator with the desired product
+postgresql                    error      2/3  postgresql                          0  no       hook failed: "leader-elected"
+postgresql-test-app           waiting    0/1  postgresql-test-app  latest/edge  278  no       waiting for machine
+
+Unit                   Workload     Agent       Machine  Public address  Ports  Message
+data-integrator/0*     blocked      idle        3        10.187.185.66          Please relate the data-integrator with the desired product
+postgresql-test-app/0  waiting      allocating  4        10.187.185.67          waiting for machine
+postgresql/0           waiting      allocating  0        10.187.185.74          waiting for machine
+postgresql/1           maintenance  executing   1        10.187.185.22          (install) installing charm software
+postgresql/2*          error        idle        2        10.187.185.30          hook failed: "leader-elected"
+
+Machine  State    Address        Inst id        Base          AZ  Message
+0        pending  10.187.185.74  juju-01c562-0  ubuntu@22.04      Running
+1        started  10.187.185.22  juju-01c562-1  ubuntu@22.04      Running
+2        started  10.187.185.30  juju-01c562-2  ubuntu@22.04      Running
+3        started  10.187.185.66  juju-01c562-3  ubuntu@22.04      Running
+4        pending  10.187.185.67  juju-01c562-4  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-2: 01:40:41 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 01:40:41 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 01:40:41 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 01:40:50 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 01:40:50 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-data-integrator-0: 01:40:50 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-1: 01:40:57 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 01:40:57 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 01:40:57 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 01:41:07 ERROR unit.postgresql/2.juju-log An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'install', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
