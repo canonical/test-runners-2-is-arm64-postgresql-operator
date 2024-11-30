@@ -1,0 +1,109 @@
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:102 starting continuous writes to the database
+[33mWARNING [0m juju.model:model.py:1563 relate is deprecated and will be removed. Use integrate instead.
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] active: 
+  postgresql/1 [executing] active: Primary
+  postgresql/2 [executing] active: 
+  postgresql-test-app/0 [idle] active: 
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:106 checking whether writes are increasing
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:115 Build charm locally
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:118 Refresh the charm
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:121 Wait for upgrade to start
+[32mINFO    [0m integration.ha_tests.test_upgrade_from_stable:test_upgrade_from_stable.py:128 Wait for upgrade to complete
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql/0 [executing] waiting: other units upgrading first...
+  postgresql/1 [executing] active: Primary
+  postgresql/2 [executing] waiting: other units upgrading first...
+[32mINFO    [0m pytest_operator.plugin:plugin.py:903 Model status:
+
+Model  Controller           Cloud/Region         Version  SLA          Timestamp
+test   localhost-localhost  localhost/localhost  3.4.5    unsupported  02:42:04Z
+
+App                  Version  Status  Scale  Charm                Channel      Rev  Exposed  Message
+postgresql           14.12    active      3  postgresql                          0  no       
+postgresql-test-app           active      1  postgresql-test-app  latest/edge  292  no       received database credentials of the first database
+
+Unit                    Workload  Agent  Machine  Public address  Ports     Message
+postgresql-test-app/0*  active    idle   3        10.103.169.135            received database credentials of the first database
+postgresql/0            waiting   idle   0        10.103.169.115  5432/tcp  other units upgrading first...
+postgresql/1*           waiting   idle   1        10.103.169.95   5432/tcp  other units upgrading first...
+postgresql/2            error     idle   2        10.103.169.116  5432/tcp  hook failed: "upgrade-relation-changed"
+
+Machine  State    Address         Inst id        Base          AZ  Message
+0        started  10.103.169.115  juju-bca2f8-0  ubuntu@22.04      Running
+1        started  10.103.169.95   juju-bca2f8-1  ubuntu@22.04      Running
+2        started  10.103.169.116  juju-bca2f8-2  ubuntu@22.04      Running
+3        started  10.103.169.135  juju-bca2f8-3  ubuntu@22.04      Running
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:909 Juju error logs:
+
+machine-1: 02:32:27 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-1: 02:32:27 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-1: 02:32:28 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-2: 02:32:30 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-2: 02:32:30 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-2: 02:32:30 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-0: 02:32:31 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-0: 02:32:31 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-0: 02:32:31 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+machine-3: 02:32:35 ERROR juju.worker.dependency "kvm-container-provisioner" manifold worker returned unexpected error: container types not yet available
+machine-3: 02:32:35 ERROR juju.worker.dependency "lxd-container-provisioner" manifold worker returned unexpected error: container types not yet available
+unit-postgresql-test-app-0: 02:32:35 ERROR juju.worker.meterstatus error running "meter-status-changed": charm missing from disk
+unit-postgresql-2: 02:42:03 ERROR unit.postgresql/2.juju-log upgrade:2: An exception occurred when installing charmed-postgresql. Reason: Snap: 'charmed-postgresql'; command ['snap', 'refresh', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-postgresql-2: 02:42:03 ERROR unit.postgresql/2.juju-log upgrade:2: Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 278, in _snap
+    return subprocess.check_output(args, universal_newlines=True)
+  File "/usr/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['snap', 'refresh', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1879, in <module>
+    main(PostgresqlOperatorCharm)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 553, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 529, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 518, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name, self._juju_context)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/main.py", line 139, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/data_platform_libs/v0/upgrade.py", line 1016, in on_upgrade_changed
+    getattr(self.on, "upgrade_granted").emit()
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 347, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 853, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/venv/ops/framework.py", line 943, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/src/upgrade.py", line 152, in _on_upgrade_granted
+    self.charm._install_snap_packages(packages=SNAP_PACKAGES, refresh=True)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/./src/charm.py", line 1511, in _install_snap_packages
+    snap_package.ensure(
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 596, in ensure
+    self._refresh(channel=channel, cohort=cohort, revision=revision, devmode=devmode)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 528, in _refresh
+    self._snap("refresh", args)
+  File "/var/lib/juju/agents/unit-postgresql-2/charm/lib/charms/operator_libs_linux/v2/snap.py", line 280, in _snap
+    raise SnapError(
+charms.operator_libs_linux.v2.snap.SnapError: Snap: 'charmed-postgresql'; command ['snap', 'refresh', 'charmed-postgresql', '--channel="14/stable"', '--revision="125"'] failed with output = ''
+unit-postgresql-2: 02:42:03 ERROR juju.worker.uniter.operation hook "upgrade-relation-changed" (via hook dispatching script: dispatch) failed: exit status 1
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:991 Forgetting model main...
