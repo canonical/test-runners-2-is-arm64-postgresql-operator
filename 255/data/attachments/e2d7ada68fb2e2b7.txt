@@ -1,0 +1,20 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:766 Connecting to existing model localhost-localhost:test on unspecified cloud
+[32mINFO    [0m integration.ha_tests.test_smoke:test_smoke.py:42 deploying charm
+[32mINFO    [0m juju.model:model.py:2097 Deploying local:postgresql-0
+[32mINFO    [0m integration.ha_tests.test_smoke:test_smoke.py:52 waiting for idle
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: waiting for machine
+[32mINFO    [0m juju.model:model.py:2971 Waiting for model:
+  postgresql-test-app/0 [allocating] waiting: agent initialising
